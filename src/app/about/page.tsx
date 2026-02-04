@@ -28,8 +28,8 @@ export default function AboutPage() {
                             <h2 className="text-3xl font-bold mb-6">Our Vision</h2>
                             <div className="space-y-6 text-lg text-gray-600 dark:text-gray-400">
                                 <p>
-                                    Social media has lost its way. It&apos;s become "media" - focused on content consumption,
-                                    viral algorithms, and keeping you addicted. The "social" part - authentic connection
+                                    Social media has lost its way. It&apos;s become &quot;media&quot; - focused on content consumption,
+                                    viral algorithms, and keeping you addicted. The &quot;social&quot; part - authentic connection
                                     with people you actually know - has been pushed aside.
                                 </p>
                                 <p>

@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export default function Features() {
     const features = [
         {
@@ -55,7 +53,7 @@ export default function Features() {
                         <span className="block font-light">?</span>
                     </h2>
                     <p className="text-xl text-gray-300 max-w-3xl mx-auto font-light leading-relaxed">
-                        We've built the most intuitive and powerful social platform to help you
+                        We&apos;ve built the most intuitive and powerful social platform to help you
                         connect, share, and grow your network in meaningful ways.
                     </p>
                 </div>

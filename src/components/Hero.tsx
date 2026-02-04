@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 // Floating Person Card Component
 function PersonCard({
@@ -25,7 +26,7 @@ function PersonCard({
             className={`absolute z-20 bg-white dark:bg-slate-800 p-4 rounded-2xl shadow-xl flex flex-col items-center gap-3 w-48 ${className}`}
         >
             <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-white shadow-sm">
-                <img
+                <Image
                     src={imageSrc}
                     alt={name}
                     className="w-full h-full object-cover"

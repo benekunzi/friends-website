@@ -20,7 +20,7 @@ export default function Testimonials() {
                                 ))}
                             </div>
                             <p className="mb-6 text-gray-600 dark:text-gray-300 leading-relaxed">
-                                "Finally, an app that doesn't try to addict me. It feels like the early Internet again—just genuine connection."
+                                &quot;Finally, an app that doesn&apos;t try to addict me. It feels like the early Internet again—just genuine connection.&quot;
                             </p>
                             <div className="flex items-center gap-4">
                                 <div className="w-10 h-10 rounded-full bg-gray-200 dark:bg-slate-600" />
