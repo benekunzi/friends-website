@@ -201,7 +201,7 @@ export default function Eula() {
   flushList();
 
   return (
-    <section className="max-w-4xl space-y-4">
+    <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
       <h2 className="text-2xl font-bold">EULA</h2>
       <div className="space-y-3">{content}</div>
     </section>
