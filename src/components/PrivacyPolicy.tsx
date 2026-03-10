@@ -1,6 +1,6 @@
 import React from 'react';
 
-const privacyPolicyText = `Last updated March 01, 2026
+const privacyPolicyText = `Last updated March 10, 2026
 
 This Privacy Notice for BeneFriendsApp ("we," "us," or "our"), describes how and why we might access, collect, store, use, and/or share ("process") your personal information when you use our services ("Services"), including when you:
 
@@ -18,7 +18,7 @@ What personal information do we process? When you visit, use, or navigate our Se
 
 Do we process any sensitive personal information? Some of the information may be considered "special" or "sensitive" in certain jurisdictions, for example your racial or ethnic origins, sexual orientation, and religious beliefs. We do not process sensitive personal information.
 
-Do we collect any information from third parties? We do not collect any information from third parties.
+Do we collect any information from third parties? We may receive fraud and security-related device intelligence from trusted service providers (for example, Fingerprint) that process data on our behalf.
 
 How do we process your information? We process your information to provide, improve, and administer our Services, communicate with you, for security and fraud prevention, and to comply with law. We may also process your information for other purposes with your consent. We process your information only when we have a valid legal reason to do so.
 
@@ -70,8 +70,11 @@ Application Data. If you use our application(s), we also may collect the followi
 - Geolocation Information. We may request access or permission to track location-based information from your mobile device.
 - Mobile Device Data. We may automatically collect device information such as your mobile device ID, model, and manufacturer, operating system, version information and system configuration information, device and application identification numbers, browser type and version, hardware model, internet service provider and/or mobile carrier, and Internet Protocol (IP) address (or proxy server).
 - Push Notifications. We may request to send you push notifications regarding your account or certain features of the application(s).
+- Device Intelligence and Fingerprinting Data. To protect accounts and prevent abuse, fraud, ban evasion, and harmful behavior, we use Fingerprint Pro (FingerprintJS). This may process technical device and network signals (for example device, app, and network metadata) and generate a pseudonymous visitor identifier. We use this only for security and fraud prevention, not for advertising personalization.
 
 This information is primarily needed to maintain the security and operation of our application(s), for troubleshooting, and for our internal analytics and reporting purposes.
+
+Fraud prevention provider details: Fingerprint Pro acts as our service provider/data processor for device intelligence processing. We remain the data controller for how this data is used in Friends.
 
 All personal information that you provide to us must be true, complete, and accurate, and you must notify us of any changes to such personal information.
 
@@ -86,6 +89,7 @@ In Short: We process your information to provide, improve, and administer our Se
 We process your personal information for a variety of reasons, depending on how you interact with our Services, including:
 
 - To facilitate account creation and authentication and otherwise manage user accounts.
+- To detect, prevent, and investigate fraud, abuse, ban evasion, and other harmful activity.
 - To save or protect an individual's vital interest.
 
 3. WHAT LEGAL BASES DO WE RELY ON TO PROCESS YOUR INFORMATION?
@@ -97,6 +101,7 @@ If you are located in the EU or UK, this section applies to you.
 The General Data Protection Regulation (GDPR) and UK GDPR require us to explain the valid legal bases we rely on in order to process your personal information. As such, we may rely on the following legal bases:
 
 - Consent
+- Legitimate Interests (including fraud prevention, abuse prevention, and service security)
 - Legal Obligations
 - Vital Interests
 
@@ -114,6 +119,7 @@ We may need to share your personal information in the following situations:
 
 - Business Transfers
 - Offer Wall
+- Security and Fraud Prevention Providers (such as Fingerprint Pro), strictly to help detect abuse, account compromise, and ban evasion.
 
 5. WHAT IS OUR STANCE ON THIRD-PARTY WEBSITES?
 
@@ -133,11 +139,15 @@ In Short: We keep your information for as long as necessary to fulfill the purpo
 
 We will only keep your personal information for as long as it is necessary for the purposes set out in this Privacy Notice.
 
+Fraud-prevention and device-intelligence data (including pseudonymous identifiers) is retained only as long as needed for security investigations, abuse prevention, legal compliance, and enforcement of our Terms, after which it is deleted or de-identified where feasible.
+
 8. HOW DO WE KEEP YOUR INFORMATION SAFE?
 
 In Short: We aim to protect your personal information through a system of organizational and technical security measures.
 
 We have implemented appropriate technical and organizational security measures designed to protect the security of any personal information we process. However, despite our safeguards and efforts to secure your information, no electronic transmission over the Internet or information storage technology can be guaranteed to be 100% secure, so we cannot promise or guarantee that hackers, cybercriminals, or other unauthorized third parties will not be able to defeat our security and improperly collect, access, steal, or modify your information. Although we will do our best to protect your personal information, transmission of personal information to and from our Services is at your own risk. You should only access the Services within a secure environment.
+
+We also use technical abuse-prevention controls, including device intelligence/fingerprinting signals, to help protect accounts and platform safety.
 
 9. WHAT ARE YOUR PRIVACY RIGHTS?
 
@@ -176,7 +186,7 @@ Categories of Personal Information We Collect
 - C. Protected classification characteristics under state or federal law - Collected: NO
 - D. Commercial information - Collected: NO
 - E. Biometric information - Collected: NO
-- F. Internet or other similar network activity - Collected: NO
+- F. Internet or other similar network activity - Collected: YES
 - G. Geolocation data - Collected: NO
 - H. Audio, electronic, sensor, or similar information - Collected: NO
 - I. Professional or employment-related information - Collected: NO

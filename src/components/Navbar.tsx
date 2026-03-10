@@ -40,6 +40,9 @@ export default function Navbar() {
                     <Link href="/faq" className="font-medium hover:text-accent transition-colors">
                         FAQ
                     </Link>
+                    <Link href="/community-guidelines" className="font-medium hover:text-accent transition-colors">
+                        Guidelines
+                    </Link>
                     <Link
                         href="/"
                         className="px-5 py-2.5 bg-primary text-white rounded-full font-medium hover:bg-primary/90 hover:text-white transition-all dark:bg-white dark:text-primary"
@@ -74,6 +77,13 @@ export default function Navbar() {
                             onClick={() => setIsMobileMenuOpen(false)}
                         >
                             FAQ
+                        </Link>
+                        <Link
+                            href="/community-guidelines"
+                            className="text-lg font-medium"
+                            onClick={() => setIsMobileMenuOpen(false)}
+                        >
+                            Guidelines
                         </Link>
                         <Link
                             href="#contact"
