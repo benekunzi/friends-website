@@ -21,19 +21,19 @@ export default function Home() {
 
   const formatSlides = [
     {
-      src: "/Back-Front-Post.png",
+      src: "Back-Front-Post.png",
       alt: "Back-Front",
       name: t.formats.slides[0].name,
       description: t.formats.slides[0].description,
     },
     {
-      src: "/Story.png",
+      src: "Story.png",
       alt: "Story",
       name: t.formats.slides[1].name,
       description: t.formats.slides[1].description,
     },
     {
-      src: "/Post.png",
+      src: "Post.png",
       alt: "Post",
       name: t.formats.slides[2].name,
       description: t.formats.slides[2].description,
@@ -513,7 +513,7 @@ export default function Home() {
           <div className="relative flex w-full justify-center md:w-1/2 md:justify-end pr-0 md:pr-12 lg:pr-24">
             <div className="journals-image relative aspect-[864/1052] w-full max-w-[260px] lg:max-w-[320px]">
               <Image
-                src="/Italien.png"
+                src="Italien.png"
                 alt="Italian Shared Journal"
                 fill
                 className="rounded-2xl border border-white/15 object-cover shadow-2xl"
