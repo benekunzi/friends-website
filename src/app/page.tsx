@@ -8,61 +8,63 @@ import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import Lenis from "lenis";
 import { motion } from "framer-motion";
+import { useLanguage } from "@/context/LanguageContext";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const formatSlides = [
-  {
-    src: "/Back-Front-Post.png",
-    alt: "Back-Front",
-    name: "Back-Front",
-    description: "Capture both sides of your story."
-  },
-  {
-    src: "/Story.png",
-    alt: "Story",
-    name: "Story",
-    description: "Share quick, honest updates that disappear after 24 hours."
-  },
-  {
-    src: "/Post.png",
-    alt: "Post",
-    name: "Post",
-    description: "For timeless memories you want to keep on your profile forever."
-  },
-];
-
-const valuesData = [
-  {
-    id: "privacy",
-    title: "Privacy",
-    desc: "Your data is yours. We don't sell your data and posts nor do we apply any algorithms, AI or upload filters to your content. Only you and your friends can see your data, nobody else.",
-  },
-  {
-    id: "independent",
-    title: "Independent",
-    desc: "No corporate overlords, no billionaire owners. We are funded by our users, meaning our only incentive is to make a product you love. Managed by a small team. All decisions are made by us and our community, not by investors or advertisers.",
-  },
-  {
-    id: "european",
-    title: "European Solution",
-    desc: "Built and hosted fully within the EU. We comply with the strictest data protection laws in the world by default, not as an afterthought.",
-  }
-];
-
-const navItems = [
-  { id: "formats", label: "Formats" },
-  { id: "journals", label: "Journals" },
-  { id: "privacy", label: "Privacy" },
-  { id: "independent", label: "Independent" },
-  { id: "european", label: "European" },
-];
-
 export default function Home() {
+  const { t } = useLanguage();
   const pageRef = useRef<HTMLDivElement>(null);
   const lenisRef = useRef<Lenis | null>(null);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [activeSection, setActiveSection] = useState("formats");
+
+  const formatSlides = [
+    {
+      src: "/Back-Front-Post.png",
+      alt: "Back-Front",
+      name: t.formats.slides[0].name,
+      description: t.formats.slides[0].description,
+    },
+    {
+      src: "/Story.png",
+      alt: "Story",
+      name: t.formats.slides[1].name,
+      description: t.formats.slides[1].description,
+    },
+    {
+      src: "/Post.png",
+      alt: "Post",
+      name: t.formats.slides[2].name,
+      description: t.formats.slides[2].description,
+    },
+  ];
+
+  const valuesData = [
+    {
+      id: "privacy",
+      title: t.values[0].title,
+      desc: t.values[0].desc,
+    },
+    {
+      id: "independent",
+      title: t.values[1].title,
+      desc: t.values[1].desc,
+    },
+    {
+      id: "european",
+      title: t.values[2].title,
+      desc: t.values[2].desc,
+    }
+  ];
+
+  const navItems = [
+    { id: "formats", label: t.navItems.formats },
+    { id: "journals", label: t.navItems.journals },
+    { id: "privacy", label: t.navItems.privacy },
+    { id: "independent", label: t.navItems.independent },
+    { id: "european", label: t.navItems.european },
+  ];
 
   const autoplayRef = useRef(
     Autoplay({ delay: 2600, stopOnInteraction: false, stopOnMouseEnter: true })
@@ -164,7 +166,7 @@ export default function Home() {
   };
 
   useEffect(() => {
-    let ctx = gsap.context(() => { }, pageRef);
+    const ctx = gsap.context(() => { }, pageRef);
 
     // Ensure DOM is fully painted and next/image layout is stable
     // before initializing ScrollTrigger calculations
@@ -401,11 +403,11 @@ export default function Home() {
           <div className="relative mx-auto min-h-screen w-full max-w-7xl">
             <div className="hero-copy absolute left-1/2 top-1/2 w-full -translate-x-1/2 -translate-y-1/2 text-center">
               <h1 className="hero-title text-5xl font-semibold leading-[0.98] tracking-tight sm:text-6xl md:text-7xl lg:text-8xl xl:text-[9rem]">
-                Social Media
-                <span className="block">How it should be</span>
+                {t.hero.title1}
+                <span className="block">{t.hero.title2}</span>
               </h1>
               <p className="hero-subtitle mt-6 text-base text-gray-400 sm:text-xl md:text-2xl">
-                Friends focused. No Doomscrolling. Private
+                {t.hero.subtitle}
               </p>
             </div>
 
@@ -438,8 +440,8 @@ export default function Home() {
 
             <div className="pointer-events-none absolute right-0 top-0 h-full w-1/2 flex items-center justify-center">
               <div className="formats-copy w-full px-8 lg:px-12 ">
-                <h2 className="mb-10 text-4xl font-semibold tracking-tight whitespace-nowrap sm:text-5xl md:text-7xl text-left">
-                  All formats you need
+                <h2 className="mb-10 text-4xl font-semibold tracking-tight sm:text-5xl md:text-7xl text-left max-w-xl">
+                  {t.formats.title}
                 </h2>
 
                 <div className="pointer-events-auto flex flex-col gap-6 text-left w-full">
@@ -483,21 +485,21 @@ export default function Home() {
 
           <div className="journals-text w-full max-w-3xl text-left md:w-1/2 md:pl-4 lg:pl-8">
             <h2 className="text-8xl flex flex-col font-bold leading-[0.95] tracking-tight sm:text-7xl md:text-8xl lg:text-[7rem] xl:text-[8rem] overflow-visible">
-              <span className="journals-title-1 block">Shared</span>
-              <span className="journals-title-2 block">Journals</span>
+              <span className="journals-title-1 block">{t.journals.title1}</span>
+              <span className="journals-title-2 block">{t.journals.title2}</span>
             </h2>
 
             <div className="mt-10 flex max-w-xl flex-col gap-8">
               <div className="journals-desc-1">
-                <h3 className="mb-2 text-2xl font-semibold text-white sm:text-3xl">Journals</h3>
+                <h3 className="mb-2 text-2xl font-semibold text-white sm:text-3xl">{t.journals.desc1Title}</h3>
                 <p className="text-lg leading-relaxed text-gray-400 sm:text-xl">
-                  On each day all of your posts are bundled together into a journal. See all of your memories on a single page. Combine multiple journals into one to have all your memories in one place.
+                  {t.journals.desc1Text}
                 </p>
               </div>
               <div className="journals-desc-2">
-                <h3 className="mb-2 text-2xl font-semibold text-white sm:text-3xl">Shared</h3>
+                <h3 className="mb-2 text-2xl font-semibold text-white sm:text-3xl">{t.journals.desc2Title}</h3>
                 <p className="text-lg leading-relaxed text-gray-400 sm:text-xl">
-                  Your friends are always included—visible on the cover and under the images. When a friend tags you, you can easily append their posts to your own, bundling everyone's perspectives together.
+                  {t.journals.desc2Text}
                 </p>
               </div>
             </div>
