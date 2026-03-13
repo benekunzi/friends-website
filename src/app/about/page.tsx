@@ -43,7 +43,7 @@ export default function AboutPage() {
     }, []);
 
     useEffect(() => {
-        let ctx = gsap.context(() => {
+        const ctx = gsap.context(() => {
             // Vision Section Animation (Text Fill + Subtitle slide up)
             const visionEl = document.getElementById("vision-section");
             if (visionEl) {
