@@ -1,6 +1,7 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
+import { useLanguage } from "@/context/LanguageContext";
 
 type SupportedLanguage = "en" | "de" | "es" | "fr";
 
@@ -551,50 +552,32 @@ const TRANSLATIONS: Record<SupportedLanguage, Translation> = {
 };
 
 export default function CommunityGuidelines() {
-  const [language, setLanguage] = useState<SupportedLanguage>("en");
-  const t = useMemo(() => TRANSLATIONS[language], [language]);
+  const { language } = useLanguage();
+  const t = useMemo(() => TRANSLATIONS[language as SupportedLanguage] || TRANSLATIONS.en, [language]);
 
   return (
-    <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-slate-100">
+    <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-0 text-gray-300">
       <div className="space-y-4 mb-10">
-        <h1 className="text-3xl sm:text-4xl font-bold tracking-tight">{t.title}</h1>
-        <p className="text-slate-300 max-w-3xl">{t.subtitle}</p>
-        <p className="text-sm text-slate-400">{t.lastUpdated}</p>
-      </div>
-
-      <div className="mb-8">
-        <label htmlFor="guideline-language" className="block text-sm font-medium mb-2 text-slate-300">
-          {t.languageLabel}
-        </label>
-        <select
-          id="guideline-language"
-          value={language}
-          onChange={(event) => setLanguage(event.target.value as SupportedLanguage)}
-          className="w-full sm:w-72 rounded-lg border border-slate-700 bg-slate-800 px-3 py-2 text-slate-100 focus:outline-none focus:ring-2 focus:ring-accent"
-        >
-          {Object.entries(TRANSLATIONS).map(([key, value]) => (
-            <option key={key} value={key}>
-              {value.languageName}
-            </option>
-          ))}
-        </select>
+        <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">{t.title}</h1>
+        <p className="text-gray-400 max-w-3xl">{t.subtitle}</p>
+        <p className="text-sm text-gray-500">{t.lastUpdated}</p>
       </div>
 
       <div className="space-y-6">
         {t.sections.map((section) => (
-          <article key={section.title} className="rounded-2xl border border-slate-700 bg-slate-800/70 p-6">
-            <h2 className="text-xl font-semibold mb-4">{section.title}</h2>
+          <article key={section.title} className="rounded-2xl border border-white/10 bg-[#0c1218]/50 p-6">
+            <h2 className="text-xl font-semibold mb-4 text-white">{section.title}</h2>
 
             {section.paragraphs?.map((paragraph) => (
-              <p key={paragraph} className="text-slate-300 leading-7 mb-3">
+              <p key={paragraph} className="text-gray-400 leading-7 mb-3">
                 {paragraph}
               </p>
             ))}
 
             {section.groups?.map((group) => (
               <div key={group.title} className="mb-5 last:mb-0">
-                <h3 className="text-base font-semibold text-slate-100 mb-2">{group.title}</h3>
-                <ul className="space-y-2 list-disc pl-5 text-slate-200">
+                <h3 className="text-base font-semibold text-white mb-2">{group.title}</h3>
+                <ul className="space-y-2 list-disc pl-5 text-gray-300">
                   {group.bullets.map((item) => (
                     <li key={item}>{item}</li>
                   ))}
@@ -603,7 +586,7 @@ export default function CommunityGuidelines() {
             ))}
 
             {section.bullets && (
-              <ul className="space-y-2 list-disc pl-5 text-slate-200">
+              <ul className="space-y-2 list-disc pl-5 text-gray-300">
                 {section.bullets.map((item) => (
                   <li key={item}>{item}</li>
                 ))}

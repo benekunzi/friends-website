@@ -52,12 +52,12 @@ export const translations = {
             {
                 id: "independent",
                 title: "Independent",
-                desc: "No corporate overlords, no billionaire owners. We are funded by our users, meaning our only incentive is to make a product you love. Managed by a small team. All decisions are made by us and our community, not by investors or advertisers.",
+                desc: "We are a small team from Germany owned by nobody. We don't have any investors or advertisers. We are funded by our users, which means our only incentive is to build a product you love. All decisions are made by us, not investors.",
             },
             {
                 id: "european",
                 title: "European Solution",
-                desc: "Built and hosted fully within the EU. We comply with the strictest data protection laws in the world by default, not as an afterthought.",
+                desc: "Built and hosted fully within the EU, Germany. We comply with the strictest data protection laws in the world by default, not as an afterthought.",
             },
         ],
     },
@@ -114,12 +114,12 @@ export const translations = {
             {
                 id: "independent",
                 title: "Independent",
-                desc: "Keine Konzerne, keine milliardenschweren Eigentümer. Wir werden von unseren Nutzern finanziert, was bedeutet, dass unser einziger Anreiz darin besteht, ein Produkt zu entwickeln, das du liebst. Verwaltet von einem kleinen Team. Alle Entscheidungen werden von uns und unserer Community getroffen, nicht von Investoren oder Werbetreibenden.",
+                desc: "Wir sind ein kleines Team aus Deutschland, das niemandem gehört. Wir haben keine Investoren oder Werbekunden. Wir werden von unseren Nutzern finanziert, was bedeutet, dass unser einziges Ziel darin besteht, ein Produkt zu bauen, das du liebst. Alle Entscheidungen werden von uns, nicht von Investoren, getroffen.",
             },
             {
                 id: "european",
                 title: "Europäische Lösung",
-                desc: "Komplett in der EU entwickelt und gehostet. Wir halten uns standardmäßig an die strengsten Datenschutzgesetze der Welt, nicht erst im Nachhinein.",
+                desc: "Komplett in der EU, Deutschland entwickelt und gehostet. Wir halten uns standardmäßig an die strengsten Datenschutzgesetze der Welt, nicht erst im Nachhinein.",
             },
         ],
     },
@@ -176,12 +176,12 @@ export const translations = {
             {
                 id: "independent",
                 title: "Independiente",
-                desc: "Sin corporaciones, sin propietarios multimillonarios. Estamos financiados por nuestros usuarios, lo que significa que nuestro único incentivo es crear un producto que te encante. Gestionado por un equipo pequeño. Todas las decisiones son tomadas por nosotros y nuestra comunidad, no por inversores.",
+                desc: "Somos un pequeño equipo de Alemania que no pertenece a nadie. No tenemos inversores ni anunciantes. Nos financiamos con nuestros usuarios, lo que significa que nuestro único incentivo es construir un producto que ames. Todas las decisiones las tomamos nosotros, no los inversores.",
             },
             {
                 id: "european",
                 title: "Solución Europea",
-                desc: "Desarrollado y alojado completamente en la UE. Cumplimos con las leyes de protección de datos más estrictas del mundo por defecto, no como una ocurrencia tardía.",
+                desc: "Desarrollado y alojado completamente en la UE, Alemania. Cumplimos con las leyes de protección de datos más estrictas del mundo por defecto, no como una ocurrencia tardía.",
             },
         ],
     },
