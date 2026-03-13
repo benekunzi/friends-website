@@ -166,12 +166,17 @@ export default function Home() {
   };
 
   useEffect(() => {
-    const ctx = gsap.context(() => { }, pageRef);
+    const mm = gsap.matchMedia(pageRef);
 
     // Ensure DOM is fully painted and next/image layout is stable
     // before initializing ScrollTrigger calculations
     const timeoutId = setTimeout(() => {
-      ctx.add(() => {
+      mm.add({
+        isDesktop: "(min-width: 768px)",
+        isMobile: "(max-width: 767px)",
+      }, (context) => {
+        const { isDesktop } = context.conditions as { isDesktop: boolean };
+
         gsap.fromTo(
           ".hero-title",
           { y: 60, opacity: 0 },
@@ -212,9 +217,9 @@ export default function Home() {
           .to(
             ".formats-carousel-wrap",
             {
-              width: "38vh", // End width completely takes over
-              x: "-25vw",
-              y: "-5vh",
+              width: isDesktop ? "38vh" : "26vh", // Scaled down slightly to fit the top half perfectly
+              x: isDesktop ? "-25vw" : "0",
+              y: isDesktop ? "-5vh" : "-30vh", // Pushed way up to the top segment
               ease: "none",
             },
             0
@@ -222,7 +227,7 @@ export default function Home() {
           .to(
             ".formats-copy",
             {
-              y: 0,
+              y: isDesktop ? 0 : "28vh", // Pushed firmly into the lower segment
               ease: "none",
             },
             0.18
@@ -368,7 +373,7 @@ export default function Home() {
 
     return () => {
       clearTimeout(timeoutId);
-      ctx.revert();
+      mm.revert();
     };
   }, []);
 
@@ -438,13 +443,13 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="pointer-events-none absolute right-0 top-0 h-full w-1/2 flex items-center justify-center">
+            <div className="pointer-events-none absolute right-0 top-0 h-full w-full md:w-1/2 flex items-center justify-center">
               <div className="formats-copy w-full px-8 lg:px-12 ">
-                <h2 className="mb-10 text-4xl font-semibold tracking-tight sm:text-5xl md:text-7xl text-left max-w-xl">
+                <h2 className="mb-6 md:mb-10 text-4xl font-semibold tracking-tight sm:text-5xl md:text-7xl text-left max-w-xl">
                   {t.formats.title}
                 </h2>
 
-                <div className="pointer-events-auto flex flex-col gap-6 text-left w-full">
+                <div className="pointer-events-auto flex flex-col gap-4 md:gap-6 text-left w-full">
                   {formatSlides.map((slide, index) => {
                     const isActive = selectedIndex === index;
                     return (
@@ -520,7 +525,7 @@ export default function Home() {
       </section>
 
       {/* Core Values Section */}
-      <section className="values-scene relative bg-[#0b1015] overflow-hidden pb-48 pt-12 md:pb-64 md:pt-12 mt-[-10vh]">
+      <section className="values-scene relative bg-[#0b1015] overflow-hidden pb-[50vh] pt-12 md:pb-[30vh] md:pt-12 mt-[-10vh]">
         <div className="mx-auto flex w-full max-w-[1400px] flex-col gap-40 px-6 md:gap-80 md:px-12">
           {valuesData.map((val, i) => {
             const isRight = i % 2 === 0;
