@@ -16,7 +16,7 @@ const formatSlides = [
     src: "/Back-Front-Post.png",
     alt: "Back-Front",
     name: "Back-Front",
-    description: "Capture both sides of your world at the exact same moment."
+    description: "Capture both sides of your story."
   },
   {
     src: "/Story.png",
@@ -28,7 +28,7 @@ const formatSlides = [
     src: "/Post.png",
     alt: "Post",
     name: "Post",
-    description: "Keep your favorite lasting memories directly on your feed."
+    description: "For timeless memories you want to keep on your profile forever."
   },
 ];
 
@@ -36,12 +36,12 @@ const valuesData = [
   {
     id: "privacy",
     title: "Privacy",
-    desc: "Your data is yours. We don't sell it, we don't mine it, and we don't ever use it to manipulate your feed behind the scenes.",
+    desc: "Your data is yours. We don't sell your data and posts nor do we apply any algorithms, AI or upload filters to your content. Only you and your friends can see your data, nobody else.",
   },
   {
     id: "independent",
     title: "Independent",
-    desc: "No corporate overlords, no billionaire owners. We are funded by our users, meaning our only incentive is to make a product you love.",
+    desc: "No corporate overlords, no billionaire owners. We are funded by our users, meaning our only incentive is to make a product you love. Managed by a small team. All decisions are made by us and our community, not by investors or advertisers.",
   },
   {
     id: "european",
@@ -491,7 +491,7 @@ export default function Home() {
               <div className="journals-desc-1">
                 <h3 className="mb-2 text-2xl font-semibold text-white sm:text-3xl">Journals</h3>
                 <p className="text-lg leading-relaxed text-gray-400 sm:text-xl">
-                  All posts you upload each day are bundled together into a journal. Your memories are displayed beautifully on a single page, and you can seamlessly combine multiple journals into one larger collection.
+                  On each day all of your posts are bundled together into a journal. See all of your memories on a single page. Combine multiple journals into one to have all your memories in one place.
                 </p>
               </div>
               <div className="journals-desc-2">
