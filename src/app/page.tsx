@@ -191,7 +191,9 @@ export default function Home() {
 
         gsap.set(".formats-copy", { y: "100vh" });
         gsap.set(".formats-carousel-wrap", {
-          width: "100px", // Initial exact width controlled by GSAP
+          transformOrigin: "50% 100%",
+          width: isDesktop ? "28vh" : "20vh", // Shrunk final max size down to 20vh for mobile (from 26vh)
+          scale: isDesktop ? 0.3 : 0.45,
           x: 0,
           y: 0
         });
@@ -217,9 +219,9 @@ export default function Home() {
           .to(
             ".formats-carousel-wrap",
             {
-              width: isDesktop ? "38vh" : "26vh", // Scaled down slightly to fit the top half perfectly
+              scale: isDesktop ? 1.2 : 0.85, // Only scale to 85% instead of 120% on mobile so it visually limits height!
               x: isDesktop ? "-25vw" : "0",
-              y: isDesktop ? "-5vh" : "-30vh", // Pushed way up to the top segment
+              y: isDesktop ? "-5vh" : "-45vh", // Pushed higher up on mobile to reduce top padding
               ease: "none",
             },
             0
@@ -227,11 +229,15 @@ export default function Home() {
           .to(
             ".formats-copy",
             {
-              y: isDesktop ? 0 : "28vh", // Pushed firmly into the lower segment
+              y: isDesktop ? 0 : "18vh", // Pulled up higher on mobile (was 28vh)
               ease: "none",
             },
-            0.18
+            0
           );
+
+        // Add a "pause" at the end of the timeline so the animations finish 
+        // before the section un-sticks, allowing the user to see it resting in place.
+        formatsTimeline.to({}, { duration: 0.5 });
 
         // Journals Section Animation
         gsap.set(".journals-text", { y: "15vh" }); // Add vertical movement
@@ -380,14 +386,14 @@ export default function Home() {
   return (
     <main ref={pageRef} className="bg-[#0b1015] text-white">
       {/* Floating Pill Navigation */}
-      <div className="fixed bottom-6 left-1/2 z-50 flex -translate-x-1/2 items-center gap-1 sm:gap-2 rounded-full border border-white/10 bg-[#0b1015]/70 px-2 py-2 backdrop-blur-xl shadow-2xl">
+      <div className="fixed bottom-6 left-1/2 z-50 flex w-max -translate-x-1/2 items-center justify-center gap-0 sm:gap-2 rounded-full border border-white/10 bg-[#0b1015]/70 p-0.5 sm:px-2 sm:py-2 backdrop-blur-xl shadow-2xl">
         {navItems.map((item) => {
           const isActive = activeSection === item.id;
           return (
             <button
               key={item.id}
               onClick={() => scrollToSection(item.id)}
-              className={`relative rounded-full px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-medium transition-colors duration-300 ${isActive ? "text-black" : "text-gray-400 hover:text-white hover:bg-white/10"
+              className={`relative whitespace-nowrap rounded-full px-1.5 py-1 min-[375px]:px-2 sm:px-4 sm:py-2 text-[9px] min-[375px]:text-[10px] sm:text-sm font-medium transition-colors duration-300 ${isActive ? "text-black" : "text-gray-400 hover:text-white hover:bg-white/10"
                 }`}
             >
               {isActive && (
@@ -403,7 +409,7 @@ export default function Home() {
         })}
       </div>
 
-      <section id="formats" className="formats-scene relative min-h-[160vh] overflow-x-clip px-6 md:px-12">
+      <section id="formats" className="formats-scene relative min-h-[200vh] overflow-x-clip px-6 md:px-12">
         <div className="sticky top-0 min-h-screen">
           <div className="relative mx-auto min-h-screen w-full max-w-7xl">
             <div className="hero-copy absolute left-1/2 top-1/2 w-full -translate-x-1/2 -translate-y-1/2 text-center">
@@ -416,7 +422,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="pointer-events-none absolute bottom-20 left-0 flex w-full justify-center px-4 md:bottom-22">
+            <div className="pointer-events-none absolute bottom-26 left-0 z-10 flex w-full justify-center px-4 md:bottom-22">
               <div className="formats-carousel-wrap pointer-events-auto flex flex-col items-center">
                 <div
                   className="carousel-inner w-full overflow-hidden cursor-grab active:cursor-grabbing"
@@ -443,33 +449,33 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="pointer-events-none absolute right-0 top-0 h-full w-full md:w-1/2 flex items-center justify-center">
-              <div className="formats-copy w-full px-8 lg:px-12 ">
-                <h2 className="mb-6 md:mb-10 text-4xl font-semibold tracking-tight sm:text-5xl md:text-7xl text-left max-w-xl">
+            <div className="pointer-events-none absolute right-0 top-0 z-20 h-full w-full md:w-1/2 flex items-center justify-center pt-12 md:pt-12">
+              <div className="formats-copy w-full px-8 lg:px-12 pb-24 md:pb-0">
+                <h2 className="mb-4 md:mb-10 text-3xl font-semibold tracking-tight sm:text-5xl md:text-7xl text-left max-w-xl">
                   {t.formats.title}
                 </h2>
 
-                <div className="pointer-events-auto flex flex-col gap-4 md:gap-6 text-left w-full">
+                <div className="pointer-events-auto relative flex flex-col gap-3 md:gap-6 text-left w-full">
                   {formatSlides.map((slide, index) => {
                     const isActive = selectedIndex === index;
                     return (
                       <div
                         key={slide.alt}
                         onClick={() => scrollTo(index)}
-                        className={`cursor-pointer transition-all duration-300 ease-out ${isActive
+                        className={`cursor-pointer transition-all duration-300 ease-out h-20 sm:h-24 flex flex-col justify-center ${isActive
                           ? "opacity-100 scale-100"
                           : "opacity-40 scale-95 hover:opacity-70"
                           }`}
                         style={{ transformOrigin: "left center" }}
                       >
                         <h3
-                          className={`font-bold transition-all duration-300 ${isActive ? "text-white text-3xl sm:text-4xl" : "text-gray-300 text-xl sm:text-2xl"
+                          className={`font-bold transition-all duration-300 ${isActive ? "text-white text-2xl sm:text-4xl" : "text-gray-300 text-lg sm:text-2xl"
                             }`}
                         >
                           {slide.name}
                         </h3>
                         <p
-                          className={`font-regular mt-2 transition-all duration-300 ${isActive ? "text-gray-200 text-base sm:text-lg" : "text-gray-500 text-sm sm:text-base"
+                          className={`font-regular mt-1 md:mt-2 transition-all duration-300 ${isActive ? "text-gray-200 text-sm sm:text-lg" : "text-gray-500 text-xs sm:text-base"
                             }`}
                         >
                           {slide.description}
@@ -525,7 +531,7 @@ export default function Home() {
       </section>
 
       {/* Core Values Section */}
-      <section className="values-scene relative bg-[#0b1015] overflow-hidden pb-[50vh] pt-12 md:pb-[30vh] md:pt-12 mt-[-10vh]">
+      <section className="values-scene relative bg-[#0b1015] overflow-hidden pb-[5vh] pt-12 md:pb-[30vh] md:pt-12 mt-[-10vh]">
         <div className="mx-auto flex w-full max-w-[1400px] flex-col gap-40 px-6 md:gap-80 md:px-12">
           {valuesData.map((val, i) => {
             const isRight = i % 2 === 0;
