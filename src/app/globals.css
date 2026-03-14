@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #0f172a; /* Navy */
-  --color-accent: #db2777; /* Magenta/Pink */
+  --color-primary: #0f172a;
+  /* Navy */
   --color-background: #ffffff;
   --color-foreground: #0f172a;
   --color-muted: #f1f5f9;
@@ -16,7 +16,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0f172a;
+    --background: #0b1015;
     --foreground: #f8fafc;
   }
 }
