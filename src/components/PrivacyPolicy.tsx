@@ -1,6 +1,6 @@
 import React from 'react';
 
-const privacyPolicyText = `Last updated March 10, 2026
+const privacyPolicyText = `Last updated March 23, 2026
 
 This Privacy Notice for BeneFriendsApp ("we," "us," or "our"), describes how and why we might access, collect, store, use, and/or share ("process") your personal information when you use our services ("Services"), including when you:
 
@@ -67,7 +67,7 @@ Social Media Login Data. We may provide you with the option to register with us 
 
 Application Data. If you use our application(s), we also may collect the following information if you choose to provide us with access or permission:
 
-- Geolocation Information. We may request access or permission to track location-based information from your mobile device.
+- Geolocation Information. We may request access or permission to track location-based information from your mobile device, either continuously or while you are using our application(s). When you choose to share location on a post, we store the precise GPS coordinates (latitude and longitude) together with that post. Location sharing for posts is entirely optional and can be toggled off before publishing.
 - Mobile Device Data. We may automatically collect device information such as your mobile device ID, model, and manufacturer, operating system, version information and system configuration information, device and application identification numbers, browser type and version, hardware model, internet service provider and/or mobile carrier, and Internet Protocol (IP) address (or proxy server).
 - Push Notifications. We may request to send you push notifications regarding your account or certain features of the application(s).
 - Device Intelligence and Fingerprinting Data. To protect accounts and prevent abuse, fraud, ban evasion, and harmful behavior, we use Fingerprint Pro (FingerprintJS). This may process technical device and network signals (for example device, app, and network metadata) and generate a pseudonymous visitor identifier. We use this only for security and fraud prevention, not for advertising personalization.
@@ -89,6 +89,7 @@ In Short: We process your information to provide, improve, and administer our Se
 We process your personal information for a variety of reasons, depending on how you interact with our Services, including:
 
 - To facilitate account creation and authentication and otherwise manage user accounts.
+- To enable location-based post features. When you opt in to share your location on a post, we store precise GPS coordinates (latitude and longitude) alongside that post to support location-aware features.
 - To detect, prevent, and investigate fraud, abuse, ban evasion, and other harmful activity.
 - To save or protect an individual's vital interest.
 
@@ -187,7 +188,7 @@ Categories of Personal Information We Collect
 - D. Commercial information - Collected: NO
 - E. Biometric information - Collected: NO
 - F. Internet or other similar network activity - Collected: YES
-- G. Geolocation data - Collected: NO
+- G. Geolocation data - Collected: YES (precise GPS coordinates, only when you opt in to location sharing on a post)
 - H. Audio, electronic, sensor, or similar information - Collected: NO
 - I. Professional or employment-related information - Collected: NO
 - J. Education Information - Collected: NO
