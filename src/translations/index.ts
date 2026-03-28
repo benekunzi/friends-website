@@ -22,12 +22,12 @@ export const translations = {
             title: "All formats you need",
             slides: [
                 {
-                    name: "Back-Front",
-                    description: "Capture both sides of your story.",
+                    name: "FRÅND",
+                    description: "Capture your story from front and back. Customize the overlaying image as you want. Visible in feed for 24 hours.",
                 },
                 {
                     name: "Story",
-                    description: "Share quick, honest updates that disappear after 24 hours.",
+                    description: "Share stories in photo or video format that disappear after 24 hours.",
                 },
                 {
                     name: "Post",
@@ -63,14 +63,14 @@ export const translations = {
         faq: {
             title: "Frequently Asked Questions",
             questions: [
-                { q: "Why a new social media platform?", a: "Social media has become solely about media. The social aspect has been lost, focusing only on clicks, likes, and followers. Algorithms are the main drivers of content and user experience, while the social and friendship aspect has been left behind.\n\nFriends is a social media platform that puts the social aspect back into social media.\n\nWe believe in a social platform that only exists for friends—private by default, with every feature focused on data privacy, no algorithm, and no doom-scrolling. A platform where the sole focus is on your friends, not your likes and followers." },
-                { q: "Who owns Friends?", a: "Friends is exclusively owned by its founder (Benedict Kunzmann). There are no investors and no other owners.\n\nThis decision was made to ensure that the platform stays true to its values and mission—ensuring absolute data privacy forever. The goal is not to build a billion-dollar company, but to build a platform that values its users and their privacy." },
-                { q: "Does Friends impose any censorship?", a: "Friends is committed to protecting freedom of expression—but with that freedom comes responsibility.\n\nWe do not allow content that incites violence, hatred, pornographic content, racism, or discrimination, nor do we permit harassment or the spread of dangerous misinformation." },
-                { q: "Does Friends share the data with anybody?", a: "No. We do not share any data with third parties. Your data belongs solely to you and your friends." },
-                { q: "How does Friends create the feed?", a: "The feed is a chronological feed of your friends' posts. Posts appear exactly when they’re shared by the people you follow—no reshuffling, no manipulation." },
-                { q: "Where does Friends store my data?", a: "Currently, Friends' core servers are hosted in Frankfurt, Germany—chosen for its reputation for strict data protection and privacy standards. It’s a location that reflects our commitment to performance, reliability, and user rights.\n\nFor worldwide speed and availability, we also make use of global CDNs and edge locations to ensure content loads quickly wherever our users are." },
-                { q: "Will there be ads?", a: "Yes. Friends will place advertisements in the feed and stories. These are personalized ads provided by Google. The data used for ads is solely gathered by Google, and we do not share any of your private data with ad providers." },
-                { q: "Is Friends free? How does it generate revenue?", a: "Yes. Friends is a free service. We generate revenue through advertisements. In the future, we may optionally add a subscription model to remove ads." },
+                { q: "Why a new social media platform?", a: "Social media has become solely about media. The social aspect has been lost, focusing only on clicks, likes, and followers. Algorithms are the main drivers of content and user experience, while the social and friendship aspect has been left behind.\n\nFRÅNDS is a social media platform that puts the social aspect back into social media.\n\nWe believe in a social platform that only exists for friends—private by default, with every feature focused on data privacy, no algorithm, and no doom-scrolling. A platform where the sole focus is on your friends, not your likes and followers." },
+                { q: "Who owns FRÅNDS?", a: "FRÅNDS is exclusively owned by its founder (Benedict Kunzmann). There are no investors and no other owners.\n\nThis decision was made to ensure that the platform stays true to its values and mission—ensuring absolute data privacy forever. The goal is not to build a billion-dollar company, but to build a platform that values its users and their privacy." },
+                { q: "Does FRÅNDS impose any censorship?", a: "FRÅNDS is committed to protecting freedom of expression—but with that freedom comes responsibility.\n\nWe do not allow content that incites violence, hatred, pornographic content, racism, or discrimination, nor do we permit harassment or the spread of dangerous misinformation." },
+                { q: "Does FRÅNDS share the data with anybody?", a: "No. We do not share any data with third parties. Your data belongs solely to you and your friends." },
+                { q: "How does FRÅNDS create the feed?", a: "The feed is a chronological feed of your friends' posts. Posts appear exactly when they’re shared by the people you follow—no reshuffling, no manipulation." },
+                { q: "Where does FRÅNDS store my data?", a: "Currently, FRÅNDS' core servers are hosted in Frankfurt, Germany—chosen for its reputation for strict data protection and privacy standards. It’s a location that reflects our commitment to performance, reliability, and user rights.\n\nFor worldwide speed and availability, we also make use of global CDNs and edge locations to ensure content loads quickly wherever our users are." },
+                { q: "Will there be ads?", a: "Yes. FRÅNDS will place advertisements in the feed and stories. These are personalized ads provided by Google. The data used for ads is solely gathered by Google, and we do not share any of your private data with ad providers." },
+                { q: "Is FRÅNDS free? How does it generate revenue?", a: "Yes. FRÅNDS is a free service. We generate revenue through advertisements. In the future, we may optionally add a subscription model to remove ads." },
                 { q: "How secure is my data?", a: "We take data security seriously. All your data is only visible to you and your accepted friends. Nobody else can see your data. We also encrypt all data at rest and in transit to prevent unauthorized access." },
                 { q: "How can I delete my account?", a: "You can delete your account at any time by going to the settings page and clicking the 'Delete Account' button. Your account and all associated data will be permanently and irreversibly removed." }
             ]
@@ -99,12 +99,12 @@ export const translations = {
             title: "Alle Formate, die du brauchst",
             slides: [
                 {
-                    name: "Back-Front",
-                    description: "Erfasse beide Seiten deiner Geschichte.",
+                    name: "FRÅND",
+                    description: "Erfasse deine Geschichte aus beiden Kamera-Perspektiven. Passe das überlagernde Bild nach deinen Wünschen an. Im Feed für 24 Stunden sichtbar.",
                 },
                 {
                     name: "Story",
-                    description: "Teile schnelle, ehrliche Updates, die nach 24 Stunden verschwinden.",
+                    description: "Teile Geschichten im Foto- oder Videoformat, die nach 24 Stunden verschwinden.",
                 },
                 {
                     name: "Post",
@@ -140,14 +140,14 @@ export const translations = {
         faq: {
             title: "Häufig gestellte Fragen",
             questions: [
-                { q: "Warum eine neue Social-Media-Plattform?", a: "Social Media besteht fast nur noch aus 'Media'. Der soziale Aspekt ist verloren gegangen und der Fokus liegt nur noch auf Klicks, Likes und Followern. Algorithmen sind zum Haupttreiber für Inhalte geworden, während der soziale Aspekt und echte Freundschaften auf der Strecke blieben.\n\nFriends ist eine Plattform, die das Soziale wieder in den Mittelpunkt von Social Media rückt.\n\nWir glauben an eine soziale Plattform, die nur für Freunde existiert – standardmäßig privat, mit absolutem Fokus auf Datenschutz, ohne Algorithmus und ohne Doom-Scrolling. Eine Plattform, deren einziger Fokus auf deinen Freunden liegt und nicht auf deinen Likes oder Followern." },
-                { q: "Wem gehört Friends?", a: "Friends gehört ausschließlich seinem Gründer (Benedict Kunzmann). Es gibt keine Investoren und keine anderen Eigentümer.\n\nDiese Entscheidung wurde getroffen, um sicherzustellen, dass die Plattform ihren Werten und ihrer Mission treu bleibt – und absolute Datensicherheit für immer garantiert. Das Ziel ist nicht, ein Milliardenunternehmen aufzubauen, sondern eine Plattform, die ihre Nutzer und deren Privatsphäre wertschätzt." },
-                { q: "Gibt es bei Friends Zensur?", a: "Friends bekennt sich zum Schutz der Meinungsfreiheit – doch mit dieser Freiheit geht Verantwortung einher.\n\nWir erlauben keine Inhalte, die zu Gewalt, Hass, rassistischer Diskriminierung oder pornografischen Inhalten anstiften, und wir dulden auch keine Belästigung oder die Verbreitung gefährlicher Fehlinformationen." },
-                { q: "Teilt Friends Daten mit Dritten?", a: "Nein. Wir teilen keinerlei Daten mit Dritten. Deine Daten gehören ausschließlich dir und deinen Freunden." },
-                { q: "Wie wird der Feed bei Friends erstellt?", a: "Der Feed ist ein rein chronologischer Feed der Beiträge deiner Freunde. Beiträge erscheinen genau in dem Moment, in dem sie von den Personen, denen du folgst, geteilt werden – keine Umordnung, keine Manipulation." },
-                { q: "Wo speichert Friends meine Daten?", a: "Derzeit werden die Kernserver von Friends in Frankfurt am Main, Deutschland, gehostet – ausgewählt wegen des strengen Datenschutzes und der hohen Privatsphärenstandards. Dieser Standort spiegelt unser Engagement für Leistung, Zuverlässigkeit und Nutzerrechte wider.\n\nFür weltweite Geschwindigkeit und Verfügbarkeit nutzen wir zudem globale CDNs und Edge-Standorte, um sicherzustellen, dass Inhalte überall auf der Welt schnell laden." },
-                { q: "Wird es Werbung geben?", a: "Ja. Friends wird Werbung im Feed und in den Stories integrieren. Diese Werbeanzeigen werden über Google ausgespielt. Die für die Werbung genutzten Daten stammen ausschließlich von Google, und wir geben keinerlei private Daten an Werbeanbieter weiter." },
-                { q: "Ist Friends kostenlos? Wie generiert es Einnahmen?", a: "Ja. Friends ist ein kostenloser Dienst. Wir generieren Einnahmen durch Werbung. In der Zukunft werden wir möglicherweise ein optionales Abonnement-Modell einführen, mit dem die Werbung entfernt werden kann." },
+                { q: "Warum eine neue Social-Media-Plattform?", a: "Social Media besteht fast nur noch aus 'Media'. Der soziale Aspekt ist verloren gegangen und der Fokus liegt nur noch auf Klicks, Likes und Followern. Algorithmen sind zum Haupttreiber für Inhalte geworden, während der soziale Aspekt und echte Freundschaften auf der Strecke blieben.\n\nFRÅNDS ist eine Plattform, die das Soziale wieder in den Mittelpunkt von Social Media rückt.\n\nWir glauben an eine soziale Plattform, die nur für Freunde existiert – standardmäßig privat, mit absolutem Fokus auf Datenschutz, ohne Algorithmus und ohne Doom-Scrolling. Eine Plattform, deren einziger Fokus auf deinen Freunden liegt und nicht auf deinen Likes oder Followern." },
+                { q: "Wem gehört FRÅNDS?", a: "FRÅNDS gehört ausschließlich seinem Gründer (Benedict Kunzmann). Es gibt keine Investoren und keine anderen Eigentümer.\n\nDiese Entscheidung wurde getroffen, um sicherzustellen, dass die Plattform ihren Werten und ihrer Mission treu bleibt – und absolute Datensicherheit für immer garantiert. Das Ziel ist nicht, ein Milliardenunternehmen aufzubauen, sondern eine Plattform, die ihre Nutzer und deren Privatsphäre wertschätzt." },
+                { q: "Gibt es bei FRÅNDS Zensur?", a: "FRÅNDS bekennt sich zum Schutz der Meinungsfreiheit – doch mit dieser Freiheit geht Verantwortung einher.\n\nWir erlauben keine Inhalte, die zu Gewalt, Hass, rassistischer Diskriminierung oder pornografischen Inhalten anstiften, und wir dulden auch keine Belästigung oder die Verbreitung gefährlicher Fehlinformationen." },
+                { q: "Teilt FRÅNDS Daten mit Dritten?", a: "Nein. Wir teilen keinerlei Daten mit Dritten. Deine Daten gehören ausschließlich dir und deinen Freunden." },
+                { q: "Wie wird der Feed bei FRÅNDS erstellt?", a: "Der Feed ist ein rein chronologischer Feed der Beiträge deiner Freunde. Beiträge erscheinen genau in dem Moment, in dem sie von den Personen, denen du folgst, geteilt werden – keine Umordnung, keine Manipulation." },
+                { q: "Wo speichert FRÅNDS meine Daten?", a: "Derzeit werden die Kernserver von FRÅNDS in Frankfurt am Main, Deutschland, gehostet – ausgewählt wegen des strengen Datenschutzes und der hohen Privatsphärenstandards. Dieser Standort spiegelt unser Engagement für Leistung, Zuverlässigkeit und Nutzerrechte wider.\n\nFür weltweite Geschwindigkeit und Verfügbarkeit nutzen wir zudem globale CDNs und Edge-Standorte, um sicherzustellen, dass Inhalte überall auf der Welt schnell laden." },
+                { q: "Wird es Werbung geben?", a: "Ja. FRÅNDS wird Werbung im Feed und in den Stories integrieren. Diese Werbeanzeigen werden über Google ausgespielt. Die für die Werbung genutzten Daten stammen ausschließlich von Google, und wir geben keinerlei private Daten an Werbeanbieter weiter." },
+                { q: "Ist FRÅNDS kostenlos? Wie generiert es Einnahmen?", a: "Ja. FRÅNDS ist ein kostenloser Dienst. Wir generieren Einnahmen durch Werbung. In der Zukunft werden wir möglicherweise ein optionales Abonnement-Modell einführen, mit dem die Werbung entfernt werden kann." },
                 { q: "Wie sicher sind meine Daten?", a: "Wir nehmen Datensicherheit sehr ernst. All deine Daten sind nur für dich und deine akzeptierten Freunde sichtbar. Niemand sonst kann deine Daten sehen. Außerdem verschlüsseln wir alle Daten sowohl im Ruhezustand als auch bei der Übertragung, um unbefugten Zugriff zu verhindern." },
                 { q: "Wie kann ich mein Konto löschen?", a: "Du kannst dein Konto jederzeit löschen, indem du in die Einstellungen gehst und auf den Button 'Konto löschen' klickst. Dein Konto und alle damit verbundenen Daten werden dadurch unwiderruflich und dauerhaft entfernt." }
             ]
@@ -176,12 +176,12 @@ export const translations = {
             title: "Todos los formatos que necesitas",
             slides: [
                 {
-                    name: "Atrás-Frente",
-                    description: "Captura ambos lados de tu historia.",
+                    name: "FRÅND",
+                    description: "Captura tu historia desde la cámara frontal y trasera. Personaliza la imagen superpuesta como quieras. Visible en el feed durante 24 horas.",
                 },
                 {
                     name: "Historia",
-                    description: "Comparte actualizaciones rápidas y sinceras que desaparecen después de 24 horas.",
+                    description: "Comparte historias en formato foto o video que desaparecen después de 24 horas.",
                 },
                 {
                     name: "Publicación",
@@ -217,14 +217,14 @@ export const translations = {
         faq: {
             title: "Preguntas Frecuentes",
             questions: [
-                { q: "¿Por qué una nueva red social?", a: "Las redes sociales se han convertido únicamente en medios. El aspecto social se ha perdido y solo se enfocan en clics, 'me gusta' y seguidores. Los algoritmos son los principales impulsores del contenido y la experiencia del usuario, mientras que el aspecto social y de amistad ha quedado atrás.\n\nFriends es una plataforma que devuelve el aspecto social a las redes sociales.\n\nCreemos en una plataforma social que solo existe para amigos, privada por defecto, con cada aspecto enfocado en la privacidad de los datos, sin algoritmos y sin 'doom-scrolling'. Una plataforma donde el único enfoque son tus amigos y no tus likes y seguidores." },
-                { q: "¿A quién pertenece Friends?", a: "Friends es propiedad exclusiva de su fundador (Benedict Kunzmann). No hay inversores ni otros propietarios.\n\nEsta decisión se tomó para garantizar que la plataforma se mantenga fiel a sus valores y a su misión, garantizando la privacidad absoluta de los datos para siempre. El objetivo no es crear una empresa multimillonaria, sino construir una plataforma que valore a sus usuarios y su privacidad." },
-                { q: "¿Ejerce Friends algún tipo de censura?", a: "Friends tiene el compromiso de proteger la libertad de expresión, pero con esa libertad viene la responsabilidad.\n\nNo permitimos contenidos que inciten a la violencia, el odio, contenido pornográfico, racismo o discriminación, ni permitimos el acoso o la difusión de información falsa." },
-                { q: "¿Friends comparte datos con terceros?", a: "No. No compartimos ningún dato con terceros. Tus datos te pertenecen únicamente a ti y a tus amigos." },
-                { q: "¿Cómo elabora el feed Friends?", a: "El feed de Friends es puramente cronológico con las publicaciones de tus amigos. Las publicaciones aparecen exactamente en el orden en que las comparten las personas a las que sigues, sin reordenamientos ni manipulación." },
-                { q: "¿Dónde almacena Friends mis datos?", a: "Actualmente, los servidores principales de Friends se alojan en Fráncfort (Alemania), elegidos por su reputación en cuanto a las estrictas normas de protección de datos y privacidad. Es una ubicación que refleja nuestro compromiso con el rendimiento, la fiabilidad y los derechos de los usuarios.\n\nPara conseguir velocidad y disponibilidad en todo el mundo, también utilizamos CDNs globales y ubicaciones edge para garantizar que el contenido se cargue rápidamente en todas partes." },
-                { q: "¿Habrá anuncios publicitarios?", a: "Sí. Friends incluirá anuncios en el feed y en las historias. Estos anuncios personalizados son proporcionados por Google. Los datos utilizados para los anuncios son recopilados únicamente por Google, nosotros no compartimos tus datos privados con anunciantes." },
-                { q: "¿Friends es gratuito? ¿Cómo genera ingresos?", a: "Sí. Friends es un servicio gratuito. Generamos ingresos a través de la publicidad. Opcionalmente añadiremos un modelo de suscripción en el futuro que eliminará los anuncios." },
+                { q: "¿Por qué una nueva red social?", a: "Las redes sociales se han convertido únicamente en medios. El aspecto social se ha perdido y solo se enfocan en clics, 'me gusta' y seguidores. Los algoritmos son los principales impulsores del contenido y la experiencia del usuario, mientras que el aspecto social y de amistad ha quedado atrás.\n\nFRÅNDS es una plataforma que devuelve el aspecto social a las redes sociales.\n\nCreemos en una plataforma social que solo existe para amigos, privada por defecto, con cada aspecto enfocado en la privacidad de los datos, sin algoritmos y sin 'doom-scrolling'. Una plataforma donde el único enfoque son tus amigos y no tus likes y seguidores." },
+                { q: "¿A quién pertenece FRÅNDS?", a: "FRÅNDS es propiedad exclusiva de su fundador (Benedict Kunzmann). No hay inversores ni otros propietarios.\n\nEsta decisión se tomó para garantizar que la plataforma se mantenga fiel a sus valores y a su misión, garantizando la privacidad absoluta de los datos para siempre. El objetivo no es crear una empresa multimillonaria, sino construir una plataforma que valore a sus usuarios y su privacidad." },
+                { q: "¿Ejerce FRÅNDS algún tipo de censura?", a: "FRÅNDS tiene el compromiso de proteger la libertad de expresión, pero con esa libertad viene la responsabilidad.\n\nNo permitimos contenidos que inciten a la violencia, el odio, contenido pornográfico, racismo o discriminación, ni permitimos el acoso o la difusión de información falsa." },
+                { q: "¿FRÅNDS comparte datos con terceros?", a: "No. No compartimos ningún dato con terceros. Tus datos te pertenecen únicamente a ti y a tus amigos." },
+                { q: "¿Cómo elabora el feed FRÅNDS?", a: "El feed de FRÅNDS es puramente cronológico con las publicaciones de tus amigos. Las publicaciones aparecen exactamente en el orden en que las comparten las personas a las que sigues, sin reordenamientos ni manipulación." },
+                { q: "¿Dónde almacena FRÅNDS mis datos?", a: "Actualmente, los servidores principales de FRÅNDS se alojan en Fráncfort (Alemania), elegidos por su reputación en cuanto a las estrictas normas de protección de datos y privacidad. Es una ubicación que refleja nuestro compromiso con el rendimiento, la fiabilidad y los derechos de los usuarios.\n\nPara conseguir velocidad y disponibilidad en todo el mundo, también utilizamos CDNs globales y ubicaciones edge para garantizar que el contenido se cargue rápidamente en todas partes." },
+                { q: "¿Habrá anuncios publicitarios?", a: "Sí. FRÅNDS incluirá anuncios en el feed y en las historias. Estos anuncios personalizados son proporcionados por Google. Los datos utilizados para los anuncios son recopilados únicamente por Google, nosotros no compartimos tus datos privados con anunciantes." },
+                { q: "FRÅNDS es gratuito? ¿Cómo genera ingresos?", a: "Sí. FRÅNDS es un servicio gratuito. Generamos ingresos a través de la publicidad. Opcionalmente añadiremos un modelo de suscripción en el futuro que eliminará los anuncios." },
                 { q: "¿Qué tan seguros están mis datos?", a: "Nos tomamos la seguridad de los datos muy en serio. Todos tus datos solo son visibles para ti y tus amigos aceptados. Nadie más puede ver tus datos. También encriptamos todos los datos, tanto en reposo como en tránsito, para evitar el acceso no autorizado." },
                 { q: "¿Cómo puedo eliminar mi cuenta?", a: "Puedes eliminar tu cuenta en cualquier momento accediendo a la página de ajustes y haciendo clic en el botón de eliminar cuenta. Tu cuenta y todos los datos asociados se eliminarán de forma permanente y sin posibilidad de recuperación." }
             ]

@@ -33,7 +33,7 @@ export default function Navbar() {
             <div className="mx-auto max-w-7xl px-6 md:px-12 flex items-center justify-between text-white">
                 {/* Logo */}
                 <Link href="/" className="text-2xl font-bold tracking-tighter hover:opacity-80 transition-opacity">
-                    Friends<span className="text-gray-400">.</span>
+                    FRÅNDS
                 </Link>
 
                 {/* Desktop Menu */}

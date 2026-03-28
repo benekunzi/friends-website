@@ -1,11 +1,9 @@
 "use client";
 
-import { useEffect, useRef, useState, useCallback } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import useEmblaCarousel from "embla-carousel-react";
-import Autoplay from "embla-carousel-autoplay";
 import Lenis from "lenis";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
@@ -16,28 +14,33 @@ export default function Home() {
   const { t } = useLanguage();
   const pageRef = useRef<HTMLDivElement>(null);
   const lenisRef = useRef<Lenis | null>(null);
-  const [selectedIndex, setSelectedIndex] = useState(0);
   const [activeSection, setActiveSection] = useState("formats");
 
   const formatSlides = [
     {
-      src: "Back-Front-Post.png",
       alt: "Back-Front",
       name: t.formats.slides[0].name,
       description: t.formats.slides[0].description,
     },
     {
-      src: "Story.png",
       alt: "Story",
       name: t.formats.slides[1].name,
       description: t.formats.slides[1].description,
     },
     {
-      src: "Post.png",
       alt: "Post",
       name: t.formats.slides[2].name,
       description: t.formats.slides[2].description,
     },
+  ];
+
+  const floatingImages = [
+    { src: "/FRAND-1.webp", alt: "Format 1", floatDuration: 3.2, floatDelay: 0 },
+    { src: "/FRAND-2.webp", alt: "Format 2", floatDuration: 3.8, floatDelay: 0.6 },
+    { src: "/Story-1.webp", alt: "Story 1", floatDuration: 3.5, floatDelay: 0.3 },
+    { src: "/Story-2.webp", alt: "Story 2", floatDuration: 4.0, floatDelay: 0.9 },
+    { src: "/Post-1.webp", alt: "Post 1", floatDuration: 3.3, floatDelay: 0.15 },
+    { src: "/Post-2.webp", alt: "Post 2", floatDuration: 3.7, floatDelay: 0.75 },
   ];
 
   const valuesData = [
@@ -66,42 +69,6 @@ export default function Home() {
     { id: "european", label: t.navItems.european },
   ];
 
-  const autoplayRef = useRef(
-    Autoplay({ delay: 2600, stopOnInteraction: false, stopOnMouseEnter: true })
-  );
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "start" }, [
-    autoplayRef.current,
-  ]);
-
-  const onSelect = useCallback(() => {
-    if (!emblaApi) return;
-    setSelectedIndex(emblaApi.selectedScrollSnap());
-  }, [emblaApi]);
-
-  const scrollTo = useCallback(
-    (index: number) => {
-      if (emblaApi) {
-        emblaApi.scrollTo(index);
-        const autoplay = emblaApi.plugins().autoplay;
-        if (autoplay) {
-          autoplay.reset();
-        }
-      }
-    },
-    [emblaApi]
-  );
-
-  useEffect(() => {
-    if (!emblaApi) return;
-    onSelect(); // initialize on mount
-    emblaApi.on("select", onSelect);
-    emblaApi.on("reInit", onSelect);
-
-    return () => {
-      emblaApi.off("select", onSelect);
-      emblaApi.off("reInit", onSelect);
-    };
-  }, [emblaApi, onSelect]);
 
   // Section Observer for the Floating Pill
   useEffect(() => {
@@ -189,13 +156,34 @@ export default function Home() {
           { y: 0, opacity: 1, duration: 1, ease: "power3.out", delay: 0.2 }
         );
 
+        const vw = window.innerWidth;
+        const vh = window.innerHeight;
+
+        const imgPositions = isDesktop ? [
+          { x: -0.30 * vw, y: -0.36 * vh, rotation: -8 },  // left upper
+          { x: -0.42 * vw, y: -0.20 * vh, rotation: 5 },   // left mid
+          { x: -0.30 * vw, y: 0.08 * vh, rotation: 3 },   // left lower
+          { x: 0.28 * vw, y: -0.36 * vh, rotation: -5 },  // right upper
+          { x: 0.34 * vw, y: -0.10 * vh, rotation: 7 },   // right mid
+          { x: 0.38 * vw, y: 0.08 * vh, rotation: -4 },  // right lower
+        ] : [
+          { x: -0.33 * vw, y: -0.55 * vh, rotation: -6 },
+          { x: -0.48 * vw, y: -0.15 * vh, rotation: 4 },
+          { x: -0.25 * vw, y: 0.10 * vh, rotation: 2 },
+          { x: 0.1 * vw, y: -0.55 * vh, rotation: -4 },
+          { x: 0.28 * vw, y: -0.38 * vh, rotation: 5 },
+          { x: 0.30 * vw, y: 0.05 * vh, rotation: -3 },
+        ];
+
+        const imgFinalScale = isDesktop ? 1.0 : 0.75;
+
         gsap.set(".formats-copy", { y: "100vh" });
-        gsap.set(".formats-carousel-wrap", {
+        gsap.set(".format-floating-img", {
           transformOrigin: "50% 100%",
-          width: isDesktop ? "28vh" : "20vh", // Shrunk final max size down to 20vh for mobile (from 26vh)
-          scale: isDesktop ? 0.3 : 0.45,
+          scale: isDesktop ? 0.25 : 0.35,
           x: 0,
-          y: 0
+          y: 0,
+          rotation: 0,
         });
 
         const formatsTimeline = gsap.timeline({
@@ -203,39 +191,23 @@ export default function Home() {
             trigger: ".formats-scene",
             start: "top top",
             end: "bottom bottom",
-            scrub: 1, // A lower scrub value might feel more responsive
+            scrub: 1,
           },
         });
 
         formatsTimeline
-          .to(
-            ".hero-copy",
-            {
-              y: "-100vh",
-              ease: "none",
-            },
-            0
-          )
-          .to(
-            ".formats-carousel-wrap",
-            {
-              scale: isDesktop ? 1.2 : 0.85, // Only scale to 85% instead of 120% on mobile so it visually limits height!
-              x: isDesktop ? "-25vw" : "0",
-              y: isDesktop ? "-5vh" : "-45vh", // Pushed higher up on mobile to reduce top padding
-              ease: "none",
-            },
-            0
-          )
-          .to(
-            ".formats-copy",
-            {
-              y: isDesktop ? 0 : "18vh", // Pulled up higher on mobile (was 28vh)
-              ease: "none",
-            },
+          .to(".hero-copy", { y: "-100vh", ease: "none" }, 0)
+          .to(".formats-copy", { y: 0, ease: "none" }, 0);
+
+        imgPositions.forEach((pos, i) => {
+          formatsTimeline.to(
+            `.format-floating-img-${i}`,
+            { scale: imgFinalScale, x: pos.x, y: pos.y, rotation: pos.rotation, ease: "none" },
             0
           );
+        });
 
-        // Add a "pause" at the end of the timeline so the animations finish 
+        // Add a "pause" at the end of the timeline so the animations finish
         // before the section un-sticks, allowing the user to see it resting in place.
         formatsTimeline.to({}, { duration: 0.5 });
 
@@ -422,67 +394,53 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="pointer-events-none absolute bottom-26 left-0 z-10 flex w-full justify-center px-4 md:bottom-22">
-              <div className="formats-carousel-wrap pointer-events-auto flex flex-col items-center">
+            <div className="pointer-events-none absolute bottom-26 left-1/2 z-10 md:bottom-22">
+              {floatingImages.map((img, i) => (
                 <div
-                  className="carousel-inner w-full overflow-hidden cursor-grab active:cursor-grabbing"
-                  ref={emblaRef}
+                  key={img.alt}
+                  className={`format-floating-img format-floating-img-${i} absolute`}
+                  style={{ left: "-55px", bottom: 0 }}
                 >
-                  <div className="flex -ml-4">
-                    {formatSlides.map((slide) => (
-                      <div key={slide.alt} className="min-w-0 flex-[0_0_100%] pl-4">
-                        <div className="relative aspect-[9/16] w-full max-w-full [transform:translateZ(0)]">
-                          <Image
-                            src={slide.src}
-                            alt={slide.alt}
-                            fill
-                            draggable={false}
-                            sizes="(min-width: 768px) 50vw, 80vw"
-                            className="object-contain select-none"
-                            priority={slide.alt === "Back-Front"}
-                          />
-                        </div>
-                      </div>
-                    ))}
+                  <div
+                    style={{
+                      animation: `floatBob ${img.floatDuration}s ease-in-out ${img.floatDelay}s infinite`,
+                    }}
+                  >
+                    <div className="relative w-[110px] aspect-[9/19.5]">
+                      <Image
+                        src={img.src}
+                        alt={img.alt}
+                        fill
+                        draggable={false}
+                        sizes="110px"
+                        className="object-contain select-none"
+                      />
+                    </div>
                   </div>
                 </div>
-              </div>
+              ))}
             </div>
 
-            <div className="pointer-events-none absolute right-0 top-0 z-20 h-full w-full md:w-1/2 flex items-center justify-center pt-12 md:pt-12">
-              <div className="formats-copy w-full px-8 lg:px-12 pb-24 md:pb-0">
-                <h2 className="mb-4 md:mb-10 text-3xl font-semibold tracking-tight sm:text-5xl md:text-7xl text-left max-w-xl">
+            <div className="pointer-events-none absolute inset-0 z-20 flex items-center justify-center">
+              <div className="formats-copy w-2/3 px-8 md:px-16">
+                <h2 className="mb-4 md:mb-10 text-3xl font-semibold tracking-tight sm:text-5xl md:text-7xl text-center">
                   {t.formats.title}
                 </h2>
 
-                <div className="pointer-events-auto relative flex flex-col gap-3 md:gap-6 text-left w-full">
-                  {formatSlides.map((slide, index) => {
-                    const isActive = selectedIndex === index;
-                    return (
-                      <div
-                        key={slide.alt}
-                        onClick={() => scrollTo(index)}
-                        className={`cursor-pointer transition-all duration-300 ease-out h-20 sm:h-24 flex flex-col justify-center ${isActive
-                          ? "opacity-100 scale-100"
-                          : "opacity-40 scale-95 hover:opacity-70"
-                          }`}
-                        style={{ transformOrigin: "left center" }}
-                      >
-                        <h3
-                          className={`font-bold transition-all duration-300 ${isActive ? "text-white text-2xl sm:text-4xl" : "text-gray-300 text-lg sm:text-2xl"
-                            }`}
-                        >
-                          {slide.name}
-                        </h3>
-                        <p
-                          className={`font-regular mt-1 md:mt-2 transition-all duration-300 ${isActive ? "text-gray-200 text-sm sm:text-lg" : "text-gray-500 text-xs sm:text-base"
-                            }`}
-                        >
-                          {slide.description}
-                        </p>
-                      </div>
-                    );
-                  })}
+                <div className="relative flex flex-col gap-3 md:gap-6 text-center w-full">
+                  {formatSlides.map((slide) => (
+                    <div
+                      key={slide.alt}
+                      className="h-20 sm:h-24 flex flex-col justify-center"
+                    >
+                      <h3 className="font-bold text-white text-2xl sm:text-4xl">
+                        {slide.name}
+                      </h3>
+                      <p className="mt-1 md:mt-2 text-gray-300 text-sm sm:text-lg">
+                        {slide.description}
+                      </p>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
@@ -517,12 +475,12 @@ export default function Home() {
           </div>
 
           <div className="relative flex w-full justify-center md:w-1/2 md:justify-end pr-0 md:pr-12 lg:pr-24">
-            <div className="journals-image relative aspect-[864/1052] w-full max-w-[260px] lg:max-w-[320px]">
+            <div className="journals-image relative aspect-[864/1600] w-full max-w-[260px] lg:max-w-[320px]">
               <Image
-                src="Italien.png"
-                alt="Italian Shared Journal"
+                src="/JournalDetail.webp"
+                alt="Shared Journal"
                 fill
-                className="rounded-2xl border border-white/15 object-cover shadow-2xl"
+                className="object-cover"
               />
             </div>
           </div>

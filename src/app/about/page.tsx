@@ -82,7 +82,7 @@ export default function AboutPage() {
             {/* Hero Section */}
             <section className="min-h-[90dvh] flex flex-col items-center justify-center px-4 relative z-10 gap-8">
                 <h1 className="text-7xl md:text-[9rem] font-bold tracking-tighter text-center text-white leading-none">
-                    About Friends.
+                    About FRÅNDS.
                 </h1>
                 <p className="text-xl md:text-3xl text-gray-400 w-full px-4 sm:px-8 text-center leading-relaxed">
                     We are building the social network for people, not for advertisers.
@@ -108,7 +108,7 @@ export default function AboutPage() {
                                 with people you actually know - has been pushed aside.
                             </p>
                             <p>
-                                Friends exists to bring the social back. We believe in a chronological feed,
+                                FRÅNDS exists to bring the social back. We believe in a chronological feed,
                                 absolute privacy, and a platform that serves you, not an algorithm.
                             </p>
                         </div>
@@ -136,7 +136,7 @@ export default function AboutPage() {
                                 <p className="text-lg md:text-xl text-blue-500 font-semibold mb-8">Founder</p>
                             </div>
                             <p className="max-w-4xl">
-                                I started Friends because I missed the days when social media was actually about connecting with the people you care about. Our small but passionate team is dedicated to building a platform that respects your time and your privacy.
+                                I started FRÅNDS because I missed the days when social media was actually about connecting with the people you care about. Our small but passionate team is dedicated to building a platform that respects your time and your privacy.
                             </p>
                         </div>
                     </div>
