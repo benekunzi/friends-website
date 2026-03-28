@@ -8,7 +8,7 @@ export default function Footer() {
                 <div className="grid md:grid-cols-4 gap-12 mb-12">
                     <div className="col-span-1 md:col-span-2">
                         <Link href="/" className="text-2xl font-bold tracking-tighter mb-6 inline-block">
-                            Friends<span className="text-gray-400">.</span>
+                            FRÅNDS<span className="text-gray-400">.</span>
                         </Link>
                         <p className="text-gray-400 max-w-sm">
                             The social network built for people, not advertisers. Join the movement today.
@@ -37,7 +37,7 @@ export default function Footer() {
                 </div>
 
                 <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
-                    <p>© {new Date().getFullYear()} Friends App Inc. All rights reserved.</p>
+                    <p>© {new Date().getFullYear()} FRÅNDS App Inc. All rights reserved.</p>
                     <div className="flex gap-6 mt-4 md:mt-0">
                         {/* Social icon placeholders */}
                         <Link href="#" className="hover:text-white transition-colors">Twitter</Link>
