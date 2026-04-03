@@ -32,7 +32,7 @@ export default function Navbar() {
         >
             <div className="mx-auto max-w-7xl px-6 md:px-12 flex items-center justify-between text-white">
                 {/* Logo */}
-                <Link href="/" className="text-2xl font-bold tracking-tighter hover:opacity-80 transition-opacity">
+                <Link href="/" className="text-2xl tracking-tighter hover:opacity-80 transition-opacity">
                     FRÅNDS
                 </Link>
 
@@ -68,7 +68,7 @@ export default function Navbar() {
                                         }}
                                         className={clsx(
                                             "w-full text-left px-4 py-2 text-sm hover:bg-white/10 transition-colors uppercase",
-                                            language === lang ? "text-white font-bold" : "text-gray-400"
+                                            language === lang ? "text-white " : "text-gray-400"
                                         )}
                                     >
                                         {lang === "en" ? "English" : lang === "de" ? "Deutsch" : "Español"}

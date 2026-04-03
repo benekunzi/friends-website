@@ -14,7 +14,7 @@ export const translations = {
             european: "European",
         },
         hero: {
-            title1: "Social Media",
+            title1: "SOCIAL MEDIA",
             title2: "How it should be",
             subtitle: "Friends focused. No Doomscrolling. Private",
         },
@@ -91,7 +91,7 @@ export const translations = {
             european: "Europäisch",
         },
         hero: {
-            title1: "Social Media",
+            title1: "SOCIAL MEDIA",
             title2: "Wie es sein sollte",
             subtitle: "Fokus auf Freunde. Kein Doomscrolling. Privat",
         },

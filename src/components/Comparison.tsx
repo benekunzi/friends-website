@@ -19,12 +19,12 @@ export default function Comparison() {
                 <div className="absolute top-0 right-0 w-96 h-96 bg-accent/20 blur-[100px] rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none" />
 
                 <div className="text-center mb-16 relative z-10">
-                    <h2 className="text-3xl md:text-5xl font-bold mb-6">Designed different.</h2>
+                    <h2 className="text-3xl md:text-5xl  mb-6">Designed different.</h2>
                     <p className="text-xl text-slate-300">See why people are making the switch.</p>
                 </div>
 
                 <div className="max-w-4xl mx-auto relative z-10">
-                    <div className="grid grid-cols-3 gap-4 mb-6 border-b border-slate-700 pb-4 text-sm md:text-lg font-bold text-start">
+                    <div className="grid grid-cols-3 gap-4 mb-6 border-b border-slate-700 pb-4 text-sm md:text-lg  text-start">
                         <div className="text-left pl-4">Feature</div>
                         <div className="text-accent ml-14">Friends</div>
                         <div className="text-slate-500 ml-14">Others</div>

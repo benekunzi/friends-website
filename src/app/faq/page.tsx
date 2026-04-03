@@ -13,7 +13,7 @@ export default function FAQ() {
     return (
         <main className="min-h-screen bg-[#0b1015] pt-32 pb-20">
             <section id="faq" className="container-custom max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 className="text-3xl font-bold mb-12 text-center text-white">{t.faq.title}</h2>
+                <h2 className="text-3xl  mb-12 text-center text-white">{t.faq.title}</h2>
                 <div className="space-y-4">
                     {t.faq.questions.map((faq, index) => (
                         <div
@@ -24,7 +24,7 @@ export default function FAQ() {
                                 onClick={() => setActiveIndex(activeIndex === index ? null : index)}
                                 className="w-full flex items-center justify-between p-6 text-left focus:outline-none"
                             >
-                                <span className="font-semibold text-white text-lg">{faq.q}</span>
+                                <span className="text-white text-lg">{faq.q}</span>
                                 <span className={clsx("transition-transform duration-300 text-gray-400", activeIndex === index ? "rotate-180" : "")}>
                                     {activeIndex === index ? <Minus size={20} /> : <Plus size={20} />}
                                 </span>

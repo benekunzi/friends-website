@@ -558,7 +558,7 @@ export default function CommunityGuidelines() {
   return (
     <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-0 text-gray-300">
       <div className="space-y-4 mb-10">
-        <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">{t.title}</h1>
+        <h1 className="text-3xl sm:text-4xl  tracking-tight text-white">{t.title}</h1>
         <p className="text-gray-400 max-w-3xl">{t.subtitle}</p>
         <p className="text-sm text-gray-500">{t.lastUpdated}</p>
       </div>
@@ -566,7 +566,7 @@ export default function CommunityGuidelines() {
       <div className="space-y-6">
         {t.sections.map((section) => (
           <article key={section.title} className="rounded-2xl border border-white/10 bg-[#0c1218]/50 p-6">
-            <h2 className="text-xl font-semibold mb-4 text-white">{section.title}</h2>
+            <h2 className="text-xl mb-4 text-white">{section.title}</h2>
 
             {section.paragraphs?.map((paragraph) => (
               <p key={paragraph} className="text-gray-400 leading-7 mb-3">
@@ -576,7 +576,7 @@ export default function CommunityGuidelines() {
 
             {section.groups?.map((group) => (
               <div key={group.title} className="mb-5 last:mb-0">
-                <h3 className="text-base font-semibold text-white mb-2">{group.title}</h3>
+                <h3 className="text-base text-white mb-2">{group.title}</h3>
                 <ul className="space-y-2 list-disc pl-5 text-gray-300">
                   {group.bullets.map((item) => (
                     <li key={item}>{item}</li>

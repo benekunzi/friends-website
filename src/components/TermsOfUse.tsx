@@ -237,7 +237,7 @@ export default function TermsOfUse() {
 
     if (isSectionHeading(line)) {
       content.push(
-        <h3 key={`h3-${key++}`} className="text-lg font-semibold mt-6">
+        <h3 key={`h3-${key++}`} className="text-lg mt-6">
           {line}
         </h3>
       );
@@ -255,7 +255,7 @@ export default function TermsOfUse() {
 
   return (
     <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4 text-gray-300">
-      <h2 className="text-2xl font-bold text-white">TERMS OF USE</h2>
+      <h2 className="text-2xl  text-white">TERMS OF USE</h2>
       <div className="space-y-3">{content}</div>
     </section>
   );

@@ -7,7 +7,7 @@ export default function Testimonials() {
     return (
         <section className="py-24 bg-gray-50 dark:bg-slate-900/30 border-y border-gray-100 dark:border-slate-800">
             <div className="container-custom">
-                <h2 className="text-3xl font-bold text-center mb-16">
+                <h2 className="text-3xl  text-center mb-16">
                     Straight from the <span className="text-accent">community</span>.
                 </h2>
 
@@ -25,7 +25,7 @@ export default function Testimonials() {
                             <div className="flex items-center gap-4">
                                 <div className="w-10 h-10 rounded-full bg-gray-200 dark:bg-slate-600" />
                                 <div>
-                                    <div className="font-bold">Alex Johnson</div>
+                                    <div className="">Alex Johnson</div>
                                     <div className="text-sm text-gray-500">Creator</div>
                                 </div>
                             </div>

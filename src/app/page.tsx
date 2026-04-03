@@ -7,6 +7,9 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from "lenis";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
+import { Anton } from "next/font/google";
+
+const anton = Anton({ weight: "400", subsets: ["latin"] });
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -209,7 +212,8 @@ export default function Home() {
 
         // Add a "pause" at the end of the timeline so the animations finish
         // before the section un-sticks, allowing the user to see it resting in place.
-        formatsTimeline.to({}, { duration: 0.5 });
+        // Reduced duration so the "dead scroll" zone is shorter.
+        formatsTimeline.to({}, { duration: 0.1 });
 
         // Journals Section Animation
         gsap.set(".journals-text", { y: "15vh" }); // Add vertical movement
@@ -365,7 +369,7 @@ export default function Home() {
             <button
               key={item.id}
               onClick={() => scrollToSection(item.id)}
-              className={`relative whitespace-nowrap rounded-full px-1.5 py-1 min-[375px]:px-2 sm:px-4 sm:py-2 text-[9px] min-[375px]:text-[10px] sm:text-sm font-medium transition-colors duration-300 ${isActive ? "text-black" : "text-gray-400 hover:text-white hover:bg-white/10"
+              className={`relative whitespace-nowrap rounded-full px-1.5 py-1 min-[375px]:px-2 sm:px-4 sm:py-2 text-[9px] min-[375px]:text-[10px] sm:text-sm transition-colors duration-300 ${isActive ? "text-black" : "text-gray-400 hover:text-white hover:bg-white/10"
                 }`}
             >
               {isActive && (
@@ -384,12 +388,16 @@ export default function Home() {
       <section id="formats" className="formats-scene relative min-h-[200vh] overflow-x-clip px-6 md:px-12">
         <div className="sticky top-0 min-h-screen">
           <div className="relative mx-auto min-h-screen w-full max-w-7xl">
-            <div className="hero-copy absolute left-1/2 top-1/2 w-full -translate-x-1/2 -translate-y-1/2 text-center">
-              <h1 className="hero-title text-5xl font-semibold leading-[0.98] tracking-tight sm:text-6xl md:text-7xl lg:text-8xl xl:text-[9rem]">
-                {t.hero.title1}
-                <span className="block">{t.hero.title2}</span>
+            <div className="hero-copy absolute left-1/2 top-1/2 w-full -translate-x-1/2 -translate-y-1/6 text-center">
+              <h1 className="hero-title">
+                <span className={`block transform scale-y-[2.5] origin-bottom ${anton.className} uppercase text-7xl leading-[0.8] tracking-[-0.05em] sm:text-8xl md:text-10xl lg:text-[10rem] xl:text-[12rem] xl:tracking-[-0.02em]`}>
+                  {t.hero.title1}
+                </span>
+                <span className="block mt-8 text-lg font-light uppercase tracking-[0.3em] text-gray-300 sm:text-xl md:text-4xl">
+                  {t.hero.title2}
+                </span>
               </h1>
-              <p className="hero-subtitle mt-6 text-base text-gray-400 sm:text-xl md:text-2xl">
+              <p className="hero-subtitle mt-8 mx-auto max-w-2xl text-base text-gray-400 sm:text-lg md:text-xl">
                 {t.hero.subtitle}
               </p>
             </div>
@@ -422,21 +430,21 @@ export default function Home() {
             </div>
 
             <div className="pointer-events-none absolute inset-0 z-20 flex items-center justify-center">
-              <div className="formats-copy w-2/3 px-8 md:px-16">
-                <h2 className="mb-4 md:mb-10 text-3xl font-semibold tracking-tight sm:text-5xl md:text-7xl text-center">
+              <div className="formats-copy w-full md:w-2/3 px-8 md:px-16">
+                <h2 className="mb-10 text-3xl tracking-tight sm:text-5xl md:text-7xl text-center">
                   {t.formats.title}
                 </h2>
 
-                <div className="relative flex flex-col gap-3 md:gap-6 text-center w-full">
+                <div className="relative flex flex-col gap-12 text-center w-full">
                   {formatSlides.map((slide) => (
                     <div
                       key={slide.alt}
                       className="h-20 sm:h-24 flex flex-col justify-center"
                     >
-                      <h3 className="font-bold text-white text-2xl sm:text-4xl">
+                      <h3 className="font-regular text-white text-2xl sm:text-4xl">
                         {slide.name}
                       </h3>
-                      <p className="mt-1 md:mt-2 text-gray-300 text-sm sm:text-lg">
+                      <p className="mt-1 md:mt-2 text-gray-300 text-sm sm:text-lg font-light">
                         {slide.description}
                       </p>
                     </div>
@@ -449,25 +457,25 @@ export default function Home() {
       </section>
 
       {/* Shared Journals Section */}
-      <section id="journals" className="journals-scene relative flex min-h-screen items-center overflow-x-clip px-4 py-32 md:px-8 mt-[-10vh] mb-[10vh]">
+      <section id="journals" className="journals-scene relative flex min-h-screen items-center overflow-x-clip px-4 py-32 md:px-8 mt-[-10vh] z-30 mb-[10vh]">
         <div className="mx-auto flex w-full max-w-[90rem] flex-col items-center justify-between gap-12 md:flex-row">
 
           <div className="journals-text w-full max-w-3xl text-left md:w-1/2 md:pl-4 lg:pl-8">
-            <h2 className="text-8xl flex flex-col font-bold leading-[0.95] tracking-tight sm:text-7xl md:text-8xl lg:text-[7rem] xl:text-[8rem] overflow-visible">
+            <h2 className="text-8xl flex flex-col leading-[0.95] tracking-tight sm:text-7xl md:text-8xl lg:text-[7rem] xl:text-[8rem] overflow-visible">
               <span className="journals-title-1 block">{t.journals.title1}</span>
               <span className="journals-title-2 block">{t.journals.title2}</span>
             </h2>
 
             <div className="mt-10 flex max-w-xl flex-col gap-8">
               <div className="journals-desc-1">
-                <h3 className="mb-2 text-2xl font-semibold text-white sm:text-3xl">{t.journals.desc1Title}</h3>
-                <p className="text-lg leading-relaxed text-gray-400 sm:text-xl">
+                <h3 className="mb-2 text-2xl text-white sm:text-3xl">{t.journals.desc1Title}</h3>
+                <p className="text-lg leading-relaxed text-gray-400 sm:text-xl font-light">
                   {t.journals.desc1Text}
                 </p>
               </div>
               <div className="journals-desc-2">
-                <h3 className="mb-2 text-2xl font-semibold text-white sm:text-3xl">{t.journals.desc2Title}</h3>
-                <p className="text-lg leading-relaxed text-gray-400 sm:text-xl">
+                <h3 className="mb-2 text-2xl text-white sm:text-3xl">{t.journals.desc2Title}</h3>
+                <p className="text-lg leading-relaxed text-gray-400 sm:text-xl font-light">
                   {t.journals.desc2Text}
                 </p>
               </div>
@@ -503,19 +511,19 @@ export default function Home() {
                   <div className="value-title-wrap inline-block">
                     <div className="relative inline-block mb-6">
                       {/* Dark/transparent base text that is always visible */}
-                      <h3 className="text-6xl font-semibold tracking-tighter text-white/10 sm:text-7xl md:text-8xl lg:text-[10rem] xl:text-[11rem] leading-[0.85]">
+                      <h3 className="text-6xl tracking-tighter text-white/10 sm:text-7xl md:text-8xl lg:text-[10rem] xl:text-[11rem] leading-[0.85]">
                         {val.title}
                       </h3>
                       {/* Bright white overlay text that fills in */}
                       <h3
-                        className="title-fill absolute left-0 top-0 h-full w-full text-6xl font-semibold tracking-tighter text-white sm:text-7xl md:text-8xl lg:text-[10rem] xl:text-[11rem] leading-[0.85]"
+                        className="title-fill absolute left-0 top-0 h-full w-full text-6xl tracking-tighter text-white sm:text-7xl md:text-8xl lg:text-[10rem] xl:text-[11rem] leading-[0.85]"
                         aria-hidden="true"
                       >
                         {val.title}
                       </h3>
                     </div>
                   </div>
-                  <p className="value-desc text-xl leading-relaxed text-gray-400 sm:text-2xl md:text-3xl lg:leading-[1.5]">
+                  <p className="value-desc text-xl leading-relaxed text-gray-400 sm:text-2xl md:text-3xl lg:leading-[1.5] font-light">
                     {val.desc}
                   </p>
                 </div>
