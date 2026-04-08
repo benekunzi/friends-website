@@ -1,7 +1,12 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Footer() {
+    const { t } = useLanguage();
+
     return (
         <footer className="bg-[#0b1015] text-white py-16 pb-28 md:pb-16 border-t border-white/10 relative z-10">
             <div className="max-w-7xl mx-auto px-6 md:px-12">
@@ -30,8 +35,8 @@ export default function Footer() {
                             <li><Link href="/about" className="hover:text-white transition-colors">About Us</Link></li>
                             <li><Link href="#contact" className="hover:text-white transition-colors">Contact</Link></li>
                             <li><Link href="/privacyPolicy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
+                            <li><Link href="/community-guidelines" className="hover:text-white transition-colors">{t.navbar.guidelines}</Link></li>
                             <li><Link href="/termsOfUse" className="hover:text-white transition-colors">Terms of Service</Link></li>
-                            <li><Link href="/community-guidelines" className="hover:text-white transition-colors">Community Guidelines</Link></li>
                         </ul>
                     </div>
                 </div>

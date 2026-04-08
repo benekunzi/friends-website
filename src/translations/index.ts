@@ -4,6 +4,7 @@ export const translations = {
             about: "About",
             faq: "FAQ",
             guidelines: "Guidelines",
+            instagramImport: "Import Instagram",
             downloadApp: "Download App",
         },
         navItems: {
@@ -75,12 +76,46 @@ export const translations = {
                 { q: "How can I delete my account?", a: "You can delete your account at any time by going to the settings page and clicking the 'Delete Account' button. Your account and all associated data will be permanently and irreversibly removed." }
             ]
         },
+        instagramImportPage: {
+            title: "Import Instagram",
+            subtitle: "Bring your existing Instagram memories into FRÅNDS in a few quick steps.",
+            whyTitle: "Why We Offer This",
+            whyItems: [
+                "We don't want you to start from zero. Keep all your existing memories and share them on a more protected platform.",
+                "Your memories stay together in one place, even if they were first shared on Instagram.",
+                "Imported files are private by default in FRÅNDS. Only you can see them until you publish them.",
+                "Your archive is processed on your device and then uploaded securely.",
+                "Importing does not delete anything from your Instagram account.",
+            ],
+            stepsTitle: "Short Tutorial",
+            steps: [
+                {
+                    title: "1. Open Instagram settings",
+                    description: "Go to your profile, open the menu, and enter the Account Center.",
+                },
+                {
+                    title: "2. Request your export",
+                    description: "Open 'Your information and permissions' and choose 'Download your information'.",
+                },
+                {
+                    title: "3. Start export to device",
+                    description: "Create export, select date range and media quality, then start the export.",
+                },
+                {
+                    title: "4. Import the ZIP in FRÅNDS",
+                    description: "When Instagram emails your download link, save the ZIP and upload it in the FRÅNDS import screen.",
+                },
+            ],
+            noteTitle: "Good to know",
+            noteText: "Instagram usually sends the export link within a few minutes, but it can take longer for larger accounts.",
+        },
     },
     de: {
         navbar: {
             about: "Über uns",
             faq: "FAQ",
             guidelines: "Richtlinien",
+            instagramImport: "Instagram importieren",
             downloadApp: "App Herunterladen",
         },
         navItems: {
@@ -152,12 +187,46 @@ export const translations = {
                 { q: "Wie kann ich mein Konto löschen?", a: "Du kannst dein Konto jederzeit löschen, indem du in die Einstellungen gehst und auf den Button 'Konto löschen' klickst. Dein Konto und alle damit verbundenen Daten werden dadurch unwiderruflich und dauerhaft entfernt." }
             ]
         },
+        instagramImportPage: {
+            title: "Instagram importieren",
+            subtitle: "Hole deine bestehenden Instagram-Erinnerungen in wenigen Schritten zu FRÅNDS.",
+            whyTitle: "Warum wir das anbieten",
+            whyItems: [
+                "Wir wollen nicht, dass du bei null startest. Nimm all deine bestehenden Erinnerungen mit und teile sie auf einer besser geschützten Plattform.",
+                "Deine Erinnerungen bleiben an einem Ort, auch wenn sie zuerst auf Instagram geteilt wurden.",
+                "Importierte Inhalte sind in FRÅNDS standardmäßig privat. Nur du siehst sie, bis du sie veröffentlichst.",
+                "Dein Archiv wird auf deinem Gerät verarbeitet und anschließend sicher hochgeladen.",
+                "Durch den Import wird nichts bei Instagram gelöscht.",
+            ],
+            stepsTitle: "Kurzanleitung",
+            steps: [
+                {
+                    title: "1. Instagram-Einstellungen öffnen",
+                    description: "Gehe auf dein Profil, öffne das Menü und dann die Kontoübersicht.",
+                },
+                {
+                    title: "2. Export anfragen",
+                    description: "Öffne 'Deine Informationen und Berechtigungen' und wähle 'Datein exportieren'.",
+                },
+                {
+                    title: "3. Export auf Gerät starten",
+                    description: "Erstelle den Export, wähle Zeitraum und Medienqualität und starte den Export.",
+                },
+                {
+                    title: "4. ZIP in FRÅNDS importieren",
+                    description: "Sobald du den Download-Link per E-Mail bekommst, lade die ZIP herunter und importiere sie im FRÅNDS-Importscreen.",
+                },
+            ],
+            noteTitle: "Gut zu wissen",
+            noteText: "Der Download-Link kommt oft nach wenigen Minuten, kann bei großen Konten aber länger dauern.",
+        },
     },
     es: {
         navbar: {
             about: "Sobre nosotros",
             faq: "Preguntas frecuentes",
             guidelines: "Directrices",
+            instagramImport: "Importar Instagram",
             downloadApp: "Descargar App",
         },
         navItems: {
@@ -228,6 +297,39 @@ export const translations = {
                 { q: "¿Qué tan seguros están mis datos?", a: "Nos tomamos la seguridad de los datos muy en serio. Todos tus datos solo son visibles para ti y tus amigos aceptados. Nadie más puede ver tus datos. También encriptamos todos los datos, tanto en reposo como en tránsito, para evitar el acceso no autorizado." },
                 { q: "¿Cómo puedo eliminar mi cuenta?", a: "Puedes eliminar tu cuenta en cualquier momento accediendo a la página de ajustes y haciendo clic en el botón de eliminar cuenta. Tu cuenta y todos los datos asociados se eliminarán de forma permanente y sin posibilidad de recuperación." }
             ]
+        },
+        instagramImportPage: {
+            title: "Importar Instagram",
+            subtitle: "Lleva tus recuerdos de Instagram a FRÅNDS en unos pocos pasos.",
+            whyTitle: "Por qué lo ofrecemos",
+            whyItems: [
+                "No queremos que empieces desde cero. Conserva todos tus recuerdos y compártelos en una plataforma mejor protegida.",
+                "Tus recuerdos quedan en un solo lugar, aunque primero los hayas compartido en Instagram.",
+                "Los archivos importados son privados por defecto en FRÅNDS. Solo tú los ves hasta publicarlos.",
+                "Tu archivo se procesa en tu dispositivo y luego se sube de forma segura.",
+                "Importar no elimina nada de tu cuenta de Instagram.",
+            ],
+            stepsTitle: "Tutorial corto",
+            steps: [
+                {
+                    title: "1. Abre los ajustes de Instagram",
+                    description: "Ve a tu perfil, abre el menú y entra en el Centro de cuentas.",
+                },
+                {
+                    title: "2. Solicita la exportación",
+                    description: "Abre 'Tu información y permisos' y elige 'Descargar tu información'.",
+                },
+                {
+                    title: "3. Inicia la exportación al dispositivo",
+                    description: "Crea la exportación, selecciona rango de fechas y calidad, y luego iníciala.",
+                },
+                {
+                    title: "4. Importa el ZIP en FRÅNDS",
+                    description: "Cuando recibas el enlace por correo, descarga el ZIP y súbelo en la pantalla de importación de FRÅNDS.",
+                },
+            ],
+            noteTitle: "Importante",
+            noteText: "El enlace de descarga suele llegar en pocos minutos, pero puede tardar más en cuentas grandes.",
         },
     },
 };

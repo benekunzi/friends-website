@@ -44,8 +44,8 @@ export default function Navbar() {
                     <Link href="/faq" className="font-medium text-gray-300 hover:text-white transition-colors">
                         {t.navbar.faq}
                     </Link>
-                    <Link href="/community-guidelines" className="font-medium text-gray-300 hover:text-white transition-colors">
-                        {t.navbar.guidelines}
+                    <Link href="/instagram-import" className="font-medium text-gray-300 hover:text-white transition-colors">
+                        {t.navbar.instagramImport}
                     </Link>
 
                     <div className="relative">
@@ -114,11 +114,11 @@ export default function Navbar() {
                             {t.navbar.faq}
                         </Link>
                         <Link
-                            href="/community-guidelines"
+                            href="/instagram-import"
                             className="text-lg font-medium text-gray-300 hover:text-white transition-colors"
                             onClick={() => setIsMobileMenuOpen(false)}
                         >
-                            {t.navbar.guidelines}
+                            {t.navbar.instagramImport}
                         </Link>
 
                         <div className="flex justify-center space-x-4 pt-4 border-t border-white/10">
