@@ -123,21 +123,23 @@ export default function AboutPage() {
                     <div className="w-full">
                         <div className="value-title-wrap inline-block mb-6 opacity-0">
                             <h3 className="flex gap-4 md:gap-8 text-7xl md:text-[9rem]  tracking-tighter text-white leading-none">
-                                <span>The</span>
+                                <span>Das</span>
                                 <span>Team</span>
                             </h3>
                         </div>
                         <div className={`value-desc flex flex-col items-center space-y-6 text-xl leading-relaxed ${openSans.className} text-gray-200 sm:text-2xl md:text-3xl lg:leading-[1.5] w-full mt-12 mb-32 opacity-0 max-w-7xl mx-auto`}>
                             <div className="w-32 h-32 md:w-48 md:h-48 rounded-full overflow-hidden bg-gray-800 mb-4">
                                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                                <img src="/benedict.jpg" alt="Benedict Kunzmann" className="w-full h-full object-cover" onError={(e) => { e.currentTarget.src = 'https://ui-avatars.com/api/?name=Benedict+Kunzmann&background=random'; }} />
+                                <img src="/ProfilePic.webp" alt="Benedict Kunzmann" className="w-full h-full object-cover" onError={(e) => { e.currentTarget.src = 'https://ui-avatars.com/api/?name=Benedict+Kunzmann&background=random'; }} />
                             </div>
                             <div>
                                 <h4 className="text-3xl md:text-5xl  text-white mb-2">Benedict Kunzmann</h4>
                                 <p className={`text-lg md:text-xl ${openSans.className} text-blue-500 font-semibold mb-8`}>Founder</p>
                             </div>
                             <p className={`max-w-4xl ${openSans.className}`}>
-                                Hey! Ich bin Bene, bin 26 Jahre alt und lebe derzeit in Leipzig.
+                                Hey! Ich bin Bene, bin 26 Jahre alt und lebe derzeit in Leipzig. Ich hab FRANDS angefangen zu programmieren, weil ich keine Lust mehr auf die ganzen Social-Media Platformen hatte, die nur noch auf Profit und Clicks ausgelegt sind. Eine Platform wo man einfach seine Erinnerungen teilen kann, ohne das man direkt Doomscrolled und seine ganzen Daten verkauft. Halt so ein klassisches Social-Media.
+                                <br />
+                                Das Team besteht zurzeit aus zwei Leuten: Ich kümmere mich um die ganze Programmierung der App und alles was im Hintergrund noch so abgeht und einer Designerin, die sich um das Design der App und Website kümmert.
                             </p>
                         </div>
                     </div>
