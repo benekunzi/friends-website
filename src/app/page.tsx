@@ -7,9 +7,10 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from "lenis";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
-import { Anton } from "next/font/google";
+import { Anton, Open_Sans } from "next/font/google";
 
 const anton = Anton({ weight: "400", subsets: ["latin"] });
+const openSans = Open_Sans({ weight: ["400"], subsets: ["latin"] });
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -393,11 +394,11 @@ export default function Home() {
                 <span className={`block transform scale-y-[2.5] origin-bottom ${anton.className} uppercase text-7xl leading-[0.8] tracking-[-0.05em] sm:text-8xl md:text-10xl lg:text-[10rem] xl:text-[12rem] xl:tracking-[-0.02em]`}>
                   {t.hero.title1}
                 </span>
-                <span className="block mt-8 text-lg font-light uppercase tracking-[0.3em] text-gray-300 sm:text-xl md:text-4xl">
+                <span className="block mt-8 $ text-lg font-light uppercase tracking-[0.3em] text-gray-300 sm:text-xl md:text-4xl">
                   {t.hero.title2}
                 </span>
               </h1>
-              <p className="hero-subtitle mt-8 mx-auto max-w-2xl text-base text-gray-400 sm:text-lg md:text-xl">
+              <p className={`hero-subtitle mt-8 mx-auto max-w-2xl ${openSans.className} text-base text-gray-400 sm:text-lg md:text-xl`}>
                 {t.hero.subtitle}
               </p>
             </div>
@@ -444,7 +445,7 @@ export default function Home() {
                       <h3 className="font-regular text-white text-2xl sm:text-4xl">
                         {slide.name}
                       </h3>
-                      <p className="mt-1 md:mt-2 text-gray-300 text-sm sm:text-lg font-light">
+                      <p className={`mt-1 md:mt-2 ${openSans.className} text-gray-300 text-base sm:text-xl font-light`}>
                         {slide.description}
                       </p>
                     </div>
@@ -469,13 +470,13 @@ export default function Home() {
             <div className="mt-10 flex max-w-xl flex-col gap-8">
               <div className="journals-desc-1">
                 <h3 className="mb-2 text-2xl text-white sm:text-3xl">{t.journals.desc1Title}</h3>
-                <p className="text-lg leading-relaxed text-gray-400 sm:text-xl font-light">
+                <p className={`text-lg leading-relaxed ${openSans.className} text-gray-400 sm:text-xl font-light`}>
                   {t.journals.desc1Text}
                 </p>
               </div>
               <div className="journals-desc-2">
                 <h3 className="mb-2 text-2xl text-white sm:text-3xl">{t.journals.desc2Title}</h3>
-                <p className="text-lg leading-relaxed text-gray-400 sm:text-xl font-light">
+                <p className={`text-lg leading-relaxed ${openSans.className} text-gray-400 sm:text-xl font-light`}>
                   {t.journals.desc2Text}
                 </p>
               </div>
@@ -523,7 +524,7 @@ export default function Home() {
                       </h3>
                     </div>
                   </div>
-                  <p className="value-desc text-xl leading-relaxed text-gray-400 sm:text-2xl md:text-3xl lg:leading-[1.5] font-light">
+                  <p className={`value-desc text-xl leading-relaxed ${openSans.className} text-gray-400 sm:text-2xl md:text-3xl lg:leading-[1.5] font-light`}>
                     {val.desc}
                   </p>
                 </div>

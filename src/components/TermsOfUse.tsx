@@ -1,3 +1,4 @@
+import { Open_Sans } from 'next/font/google';
 import React from 'react';
 
 const termsOfUseText = `AGREEMENT TO OUR LEGAL TERMS
@@ -199,6 +200,8 @@ These Legal Terms and any policies or operating rules posted by us on the Servic
 
 You can contact us by email at ________ or by mail to ________, ________, ________.`;
 
+const openSans = Open_Sans({ weight: ["500"], subsets: ["latin"] });
+
 export default function TermsOfUse() {
   const lines = termsOfUseText.split('\n');
   const content: React.ReactNode[] = [];
@@ -256,7 +259,7 @@ export default function TermsOfUse() {
   return (
     <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4 text-gray-300">
       <h2 className="text-2xl  text-white">TERMS OF USE</h2>
-      <div className="space-y-3">{content}</div>
+      <div className={`space-y-3 ${openSans.className}`}>{content}</div>
     </section>
   );
 }

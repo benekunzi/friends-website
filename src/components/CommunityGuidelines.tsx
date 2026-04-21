@@ -2,6 +2,7 @@
 
 import { useMemo } from "react";
 import { useLanguage } from "@/context/LanguageContext";
+import { Open_Sans } from "next/font/google";
 
 type SupportedLanguage = "en" | "de" | "es" | "fr";
 
@@ -551,6 +552,8 @@ const TRANSLATIONS: Record<SupportedLanguage, Translation> = {
   },
 };
 
+const openSans = Open_Sans({ weight: ["500"], subsets: ["latin"] });
+
 export default function CommunityGuidelines() {
   const { language } = useLanguage();
   const t = useMemo(() => TRANSLATIONS[language as SupportedLanguage] || TRANSLATIONS.en, [language]);
@@ -569,7 +572,7 @@ export default function CommunityGuidelines() {
             <h2 className="text-xl mb-4 text-white">{section.title}</h2>
 
             {section.paragraphs?.map((paragraph) => (
-              <p key={paragraph} className="text-gray-400 leading-7 mb-3">
+              <p key={paragraph} className={`text-gray-100 leading-7 mb-3 ${openSans.className}`}>
                 {paragraph}
               </p>
             ))}
@@ -577,7 +580,7 @@ export default function CommunityGuidelines() {
             {section.groups?.map((group) => (
               <div key={group.title} className="mb-5 last:mb-0">
                 <h3 className="text-base text-white mb-2">{group.title}</h3>
-                <ul className="space-y-2 list-disc pl-5 text-gray-300">
+                <ul className={`space-y-2 list-disc pl-5 text-gray-300 ${openSans.className}`}>
                   {group.bullets.map((item) => (
                     <li key={item}>{item}</li>
                   ))}
@@ -586,7 +589,7 @@ export default function CommunityGuidelines() {
             ))}
 
             {section.bullets && (
-              <ul className="space-y-2 list-disc pl-5 text-gray-300">
+              <ul className={`space-y-2 list-disc pl-5 text-gray-300 ${openSans.className}`}>
                 {section.bullets.map((item) => (
                   <li key={item}>{item}</li>
                 ))}

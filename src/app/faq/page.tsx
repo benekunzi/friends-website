@@ -5,6 +5,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Plus, Minus } from "lucide-react";
 import clsx from "clsx";
 import { useLanguage } from "@/context/LanguageContext";
+import { Open_Sans } from "next/font/google";
+
+const openSans = Open_Sans({ weight: ["500"], subsets: ["latin"] });
 
 export default function FAQ() {
     const { t } = useLanguage();
@@ -38,7 +41,7 @@ export default function FAQ() {
                                         exit={{ height: 0, opacity: 0 }}
                                         transition={{ duration: 0.3 }}
                                     >
-                                        <div className="px-6 pb-6 pt-4 text-gray-400 leading-relaxed border-t border-slate-800 mt-2 whitespace-pre-wrap">
+                                        <div className={`px-6 pb-6 pt-4 text-gray-400 leading-relaxed border-t border-slate-800 mt-2 whitespace-pre-wrap ${openSans.className}`}>
                                             {faq.a}
                                         </div>
                                     </motion.div>

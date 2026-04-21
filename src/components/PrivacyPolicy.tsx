@@ -1,3 +1,4 @@
+import { Open_Sans } from 'next/font/google';
 import React from 'react';
 
 const privacyPolicyText = `Last updated March 23, 2026
@@ -238,6 +239,8 @@ Based on the applicable laws of your country or state of residence in the US, yo
 
 To request to review, update, or delete your personal information, please fill out and submit a data subject access request.`;
 
+const openSans = Open_Sans({ weight: ["500"], subsets: ["latin"] });
+
 export default function PrivacyPolicy() {
   const lines = privacyPolicyText.split('\n');
   const content: React.ReactNode[] = [];
@@ -304,7 +307,7 @@ export default function PrivacyPolicy() {
   return (
     <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4 text-gray-300">
       <h2 className="text-2xl  text-white">PRIVACY POLICY</h2>
-      <div className="space-y-3">{content}</div>
+      <div className={`space-y-3 ${openSans.className}`}>{content}</div>
     </section>
   );
 }
